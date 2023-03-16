@@ -3,5 +3,5 @@
 ```{toctree}
 notebook1
 notebook2
-notebooks/hello-world
+notebooks/hello-world.md
 ```
