@@ -20,3 +20,7 @@ b = np.arange(10)
 c = np.arange(10)
 d = np.arange(10)
 ```
+
+```{code-cell}
+e = [1, 2, 3]
+```
