@@ -3,4 +3,5 @@ repos:
   rev: v1.14.0  # CURRENT_TAG/COMMIT_HASH
   hooks:
   - id: jupytext
+    files: '^notebooks/(.*\.md)$'
     args: [--sync, --set-formats, "myst,ipynb"]
