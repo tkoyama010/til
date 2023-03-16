@@ -17,4 +17,3 @@ jupytext:
 ```{code-cell}
 print("Hello World!")
 ```
-
