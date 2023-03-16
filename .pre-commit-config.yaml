@@ -8,4 +8,4 @@ repos:
   rev: v1.14.0  # CURRENT_TAG/COMMIT_HASH
   hooks:
   - id: jupytext
-    args: [--sync, --set-formats, "myst,py:percent"]
+    args: [--sync, --set-formats, "ipynb,py:percent"]
