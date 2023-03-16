@@ -24,3 +24,7 @@ d = np.arange(10)
 ```{code-cell}
 e = [1, 2, 3]
 ```
+
+```{code-cell}
+f = [1, 2, 3]
+```
