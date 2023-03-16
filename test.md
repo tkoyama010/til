@@ -10,6 +10,10 @@ jupytext:
     jupytext_version: 1.14.0
 ---
 
+# Jupytextの動作確認
+
+このノートはJupytextの動作確認を行うために作成したものです。
+
 ```{code-cell}
 import numpy as np
 ```
