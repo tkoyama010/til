@@ -3,4 +3,5 @@
 ```{toctree}
 README.md
 notebooks/hello-world.md
+notebooks/titanic.md
 ```
