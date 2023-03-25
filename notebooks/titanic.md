@@ -17,3 +17,5 @@ Titanicのデータをダウンロードします。
 ```{code-cell}
 !kaggle competitions download -c titanic
 ```
+
+ダウンロードの際には`kaggle.json`ファイルを `~/.kaggle/kaggle.json` に配置しておく必要があります。
