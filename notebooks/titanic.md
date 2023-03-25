@@ -19,7 +19,15 @@ Titanicのデータをダウンロードします。
 ```
 
 ダウンロードの際には`kaggle.json`ファイルを `~/.kaggle/kaggle.json` に配置しておく必要があります。
+`titanic.zip`ファイルがダウンロードされますのでカレントディレクトリに展開します。
+
+```{code-cell}
+!unzip titanic.zip
+```
+
+`train.csv` ファイルに訓練用のデータが保存されていますので `polars.read_csv` で読み込みます。
 
 ```{code-cell}
 import polars as pl
+train = pl.read_csv("train.csv")
 ```
