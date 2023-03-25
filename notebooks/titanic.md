@@ -10,10 +10,10 @@ jupytext:
     jupytext_version: 1.14.5
 ---
 
-# Jupytextの動作確認
+# Titanicのデータのダウンロード
 
-このノートはJupytextの動作確認を行うために作成したものです。
+Titanicのデータをダウンロードします。
 
 ```{code-cell}
-print("Hello World!")
+!kaggle competitions download -c titanic
 ```
