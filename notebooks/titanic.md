@@ -19,3 +19,7 @@ Titanicのデータをダウンロードします。
 ```
 
 ダウンロードの際には`kaggle.json`ファイルを `~/.kaggle/kaggle.json` に配置しておく必要があります。
+
+```{code-cell}
+import polars as pl
+```
