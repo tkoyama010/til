@@ -4,5 +4,5 @@
 format: jb-book
 root: intro
 chapters:
-- file: ../notebooks/hello-world
-- file: ../notebooks/titanic
+- file: ../notebooks/hello-world.md
+- file: ../notebooks/titanic.md
