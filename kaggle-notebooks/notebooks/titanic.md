@@ -15,7 +15,7 @@ jupytext:
 Titanicのデータをダウンロードします。
 
 ```{code-cell}
-!kaggle competitions download -c titanic
+!kaggle competitions download -c titanic --quiet
 ```
 
 ダウンロードの際には`kaggle.json`ファイルを `~/.kaggle/kaggle.json` に配置しておく必要があります。
@@ -30,5 +30,5 @@ Titanicのデータをダウンロードします。
 ```{code-cell}
 import polars as pl
 train = pl.read_csv("train.csv")
-train
+train.head(3)
 ```
