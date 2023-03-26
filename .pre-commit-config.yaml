@@ -13,3 +13,8 @@ repos:
   - id: jupytext
     files: '^kaggle-notebooks/notebooks/(.*\.md)$'
     args: [--sync, --set-formats, "myst,ipynb"]
+repos:
+- repo: https://github.com/psf/black
+  rev: 23.1.0
+  hooks:
+  - id: black
