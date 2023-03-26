@@ -1,4 +1,6 @@
--r ./kaggle-notebooks/requirements.txt
+jupyter-book==0.15.1
+matplotlib==3.7.1
+numpy==1.24.2
 jupyterlab==3.6.2
 kaggle==1.5.13
 myst-nb==0.17.1
