@@ -11,5 +11,5 @@ repos:
   rev: v1.14.5  # CURRENT_TAG/COMMIT_HASH
   hooks:
   - id: jupytext
-    files: '^kaggle-notebooks/notebooks/(.*\.md)$'
-    args: [--sync, --set-formats, "myst,ipynb"]
+    files: '^kaggle-notebooks/notebooks/(.*\.py)$'
+    args: [--sync, --set-formats, "py:percent,ipynb"]
