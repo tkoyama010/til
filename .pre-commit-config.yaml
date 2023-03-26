@@ -11,5 +11,5 @@ repos:
   rev: v1.14.5  # CURRENT_TAG/COMMIT_HASH
   hooks:
   - id: jupytext
-    files: '^notebooks/(.*\.md)$'
+    files: '^kaggle-notebooks/notebooks/(.*\.md)$'
     args: [--sync, --set-formats, "myst,ipynb"]
