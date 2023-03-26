@@ -1,7 +1,7 @@
+jupyter-book==0.15.0
 jupyterlab==3.6.2
 kaggle==1.5.13
 myst-nb==0.17.1
 polars==0.16.16
 pre-commit==3.2.1
 scikit-learn==1.2.2
-jupyter-book==0.15.0
