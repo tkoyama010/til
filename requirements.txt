@@ -7,4 +7,5 @@ numpy==1.24.2
 polars==0.16.16
 pre-commit==3.2.1
 scikit-learn==1.2.2
+statsmodels==0.13.4
 seaborn==0.12.1
