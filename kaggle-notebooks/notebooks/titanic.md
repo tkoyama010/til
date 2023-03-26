@@ -30,5 +30,5 @@ Titanicのデータをダウンロードします。
 ```{code-cell}
 import polars as pl
 train = pl.read_csv("train.csv")
-train
+train.head(3)
 ```
