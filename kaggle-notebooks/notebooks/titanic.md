@@ -10,9 +10,11 @@ jupytext:
     jupytext_version: 1.14.5
 ---
 
-# Titanicのデータのダウンロード
+# タイタニック号 災害から学ぶ機械学習
 
-Titanicのデータをダウンロードします。
+## データの取得
+
+Titanicのデータを取得します。
 
 ```{code-cell}
 !kaggle competitions download -c titanic --quiet
@@ -32,3 +34,15 @@ import polars as pl
 train = pl.read_csv("train.csv")
 train.head(3)
 ```
+
+`test.csv` ファイルにテスト用のデータが保存されていますので同様に `polars.read_csv` で読み込みます。
+
+```{code-cell}
+import polars as pl
+test = pl.read_csv("test.csv")
+test.head(3)
+```
+
+## データの前処理
+
+データを取得できましたので、欠損値などがないか確認を行います。
