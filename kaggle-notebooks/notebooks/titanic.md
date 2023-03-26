@@ -42,7 +42,3 @@ import polars as pl
 test = pl.read_csv("test.csv")
 test.head(3)
 ```
-
-## データの前処理
-
-データを取得できましたので、欠損値などがないか確認を行います。
