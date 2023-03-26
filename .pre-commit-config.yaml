@@ -13,3 +13,8 @@ repos:
   - id: jupytext
     files: '^kaggle-notebooks/notebooks/(.*\.py)$'
     args: [--sync, --set-formats, "py:percent,ipynb"]
+repos:
+- repo: https://github.com/psf/black
+  rev: 23.1.0
+  hooks:
+  - id: black
