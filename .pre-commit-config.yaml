@@ -8,7 +8,7 @@ repos:
     args: [--branch, main]
   - id: requirements-txt-fixer
 - repo: https://github.com/mwouts/jupytext
-  rev: v1.14.5  # CURRENT_TAG/COMMIT_HASH
+  rev: v1.14.5
   hooks:
   - id: jupytext
     files: '^kaggle-notebooks/notebooks/(.*\.py)$'
