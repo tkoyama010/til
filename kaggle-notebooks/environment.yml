@@ -2,7 +2,7 @@ name: kaggle-notebooks
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
+  - python=3.11
   - getfem==5.4.2
   - pip==23.0.1
   - pip:
