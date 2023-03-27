@@ -43,7 +43,7 @@ train.head(3).style.set_table_attributes('style="font-size: 10px"')
 import pandas as pd
 
 test = pd.read_csv("test.csv")
-test.head(3)
+test.head(3).style.set_table_attributes('style="font-size: 10px"')
 
 # %% [markdown]
 # また、 `seaborn` というライブラリを使用してもデータを取得することができます。
