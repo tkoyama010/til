@@ -1,7 +1,6 @@
 name: kaggle-notebooks
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.9
   - getfem==5.4.2
