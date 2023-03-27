@@ -34,7 +34,7 @@
 import pandas as pd
 
 train = pd.read_csv("train.csv")
-train.head(3)
+train.head(3).style.set_table_attributes('style="font-size: 10px"')
 
 # %% [markdown]
 # `test.csv` ファイルにテスト用のデータが保存されていますので同様に `pandas.read_csv` で読み込みます。
@@ -43,7 +43,7 @@ train.head(3)
 import pandas as pd
 
 test = pd.read_csv("test.csv")
-test.head(3)
+test.head(3).style.set_table_attributes('style="font-size: 10px"')
 
 # %% [markdown]
 # また、 `seaborn` というライブラリを使用してもデータを取得することができます。
