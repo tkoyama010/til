@@ -7,5 +7,4 @@ dependencies:
   - getfem==5.4.2
   - pip
   - pip:
-  - pip:
     - -r requirements.txt
