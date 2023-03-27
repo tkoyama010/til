@@ -6,4 +6,5 @@ dependencies:
   - getfem==5.4.2
   - pip
   - pip:
+    - jupyter-book==0.12.3
     - -r requirements.txt
