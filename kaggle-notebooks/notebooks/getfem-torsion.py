@@ -11,7 +11,7 @@
 # ---
 
 # %% [markdown]
-# # GetFEMの動作確認
+# # GetFEMによる丸棒のねじり解析
 #
 #
 # 半径方向の単位ベクトル $P$ は以下の式であらわされる。
@@ -25,8 +25,6 @@
 # $$
 # \frac{dP}{d\theta }=\begin{pmatrix}-\sin \theta &\cos \theta \end{pmatrix}
 # $$
-#
-# このノートはGetFEMの動作確認を行うために作成したものです。
 
 # %%
 import getfem as gf
