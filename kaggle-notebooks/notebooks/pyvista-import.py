@@ -17,6 +17,7 @@
 
 # %%
 import pyvista
+
 pyvista.start_xvfb()
 
 mesh = pv.Sphere()
