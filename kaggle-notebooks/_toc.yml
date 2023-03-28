@@ -6,4 +6,4 @@ root: intro
 chapters:
 - file: notebooks/hello-world
 - file: notebooks/titanic
-- file: notebooks/import-getfem
+- file: notebooks/getfem-import
