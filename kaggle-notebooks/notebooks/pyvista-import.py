@@ -11,9 +11,9 @@
 # ---
 
 # %% [markdown]
-# # Jupytextの動作確認
+# # PyVistaの動作確認
 #
-# このノートはJupytextの動作確認を行うために作成したものです。
+# このノートはPyVistaの動作確認を行うために作成したものです。
 
 # %%
-print("Hello World!")
+import pyvsita
