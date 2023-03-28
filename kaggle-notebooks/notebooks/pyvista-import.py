@@ -16,4 +16,10 @@
 # このノートはPyVistaの動作確認を行うために作成したものです。
 
 # %%
-import pyvsita
+import pyvista
+pyvista.start_xvfb()
+
+mesh = pv.Sphere()
+plotter = pyvista.Plotter()
+plotter.add_mesh(mesh)
+plotter.show()
