@@ -19,6 +19,7 @@
 import pyvista
 
 pyvista.start_xvfb()
+pyvista.set_jupyter_backend("panel")
 
 
 # %%
