@@ -21,7 +21,9 @@ import pyvista
 pyvista.start_xvfb()
 pyvista.set_jupyter_backend("panel")
 
-# mesh = pv.Sphere()
-# plotter = pyvista.Plotter()
-# plotter.add_mesh(mesh)
-# plotter.show()
+
+# %%
+mesh = pv.Sphere()
+plotter = pyvista.Plotter()
+plotter.add_mesh(mesh)
+plotter.show()
