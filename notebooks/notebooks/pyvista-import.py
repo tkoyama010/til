@@ -18,9 +18,9 @@
 # %%
 import pyvista
 
-pyvista.start_xvfb()
-
-mesh = pv.Sphere()
-plotter = pyvista.Plotter()
-plotter.add_mesh(mesh)
-plotter.show()
+#pyvista.start_xvfb()
+#
+#mesh = pv.Sphere()
+#plotter = pyvista.Plotter()
+#plotter.add_mesh(mesh)
+#plotter.show()
