@@ -5,5 +5,6 @@ format: jb-book
 root: index
 chapters:
 - file: notebooks/hello-world
+- file: notebooks/titanic
 - file: notebooks/getfem-import
 - file: notebooks/pyvista-import
