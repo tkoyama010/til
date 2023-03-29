@@ -5,10 +5,10 @@ matplotlib==3.7.1
 myst-nb==0.17.1
 numpy==1.24.2
 pandas==1.5.3
+panel==0.14.2
 polars==0.16.16
 pre-commit==3.2.1
 pyvista==0.38.5
 scikit-learn==1.2.2
 seaborn==0.12.2
 statsmodels==0.13.5
-panel==0.14.2
