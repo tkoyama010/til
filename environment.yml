@@ -1,4 +1,4 @@
-name: kaggle-notebooks
+name: notebooks
 channels:
   - conda-forge
 dependencies:

@@ -10,3 +10,4 @@ pre-commit==3.2.1
 scikit-learn==1.2.2
 seaborn==0.12.2
 statsmodels==0.13.5
+sphinx==6.1.2
