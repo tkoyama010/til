@@ -4,6 +4,7 @@ build:
   os: "ubuntu-20.04"
   apt_packages:
     - libgl1-mesa-glx
+    - libxrender1
     - xvfb
     - zip
   tools:
