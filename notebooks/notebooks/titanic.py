@@ -16,3 +16,10 @@
 # ## データの取得
 #
 # Titanicのデータを取得します。
+
+# %%
+# !kaggle competitions download -c titanic --quiet
+
+# %% [markdown]
+# ダウンロードの際には`kaggle.json`ファイルを `~/.kaggle/kaggle.json` に配置しておく必要があります。
+# `titanic.zip`ファイルがダウンロードされますのでカレントディレクトリに展開します。
