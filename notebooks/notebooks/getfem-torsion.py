@@ -40,5 +40,4 @@ from pyvista.examples import cells as example_cells, plot_cell
 grid = pv.CylinderStructured(
     radius=np.linspace(0.0, 1.0, 2), theta_resolution=4, z_resolution=2
 )
-block = pv.MultiBlock([grid]).combine(merge_points=True, tolerance=1.0e-15)
 example_cells.plot_cell(grid)
