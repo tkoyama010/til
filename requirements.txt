@@ -9,8 +9,8 @@ pandas==1.5.3
 panel==0.14.2
 polars==0.16.16
 pre-commit==3.2.1
+pydata-sphinx-theme==0.13.2
 pyvista==0.37.0
 scikit-learn==1.2.2
 seaborn==0.12.2
 statsmodels==0.13.5
-pydata-sphinx-theme==0.13.2
