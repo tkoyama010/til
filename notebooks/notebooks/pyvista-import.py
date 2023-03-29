@@ -19,7 +19,7 @@
 import pyvista
 
 pyvista.start_xvfb()
-# pyvista.set_jupyter_backend("trame")
+pyvista.set_jupyter_backend("panel")
 
 # mesh = pv.Sphere()
 # plotter = pyvista.Plotter()
