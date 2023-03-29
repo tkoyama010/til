@@ -1,3 +1,3 @@
-# Kaggle notebooks
+# Notebooks
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5c4da99c-c307-462a-8585-ea71276cc90a/deploy-status)](https://app.netlify.com/sites/fastidious-cactus-371749/deploys)
+[![Documentation Status](https://readthedocs.org/projects/tkoyama010-notebooks/badge/?version=latest)](https://tkoyama010-notebooks.readthedocs.io/ja/latest/?badge=latest)
