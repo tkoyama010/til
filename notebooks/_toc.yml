@@ -2,9 +2,14 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: index
 chapters:
 - file: notebooks/hello-world
 - file: notebooks/titanic
+<<<<<<< HEAD:kaggle-notebooks/_toc.yml
 - file: notebooks/import-getfem
 - file: notebooks/getfem-torsion
+=======
+- file: notebooks/getfem-import
+- file: notebooks/pyvista-import
+>>>>>>> 38d88cb46dc296907ae42935427a4f734647dce6:notebooks/_toc.yml
