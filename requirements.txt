@@ -1,3 +1,4 @@
+ipyvtklink==0.2.3
 jupyter-book==0.15.1
 jupyterlab==3.6.2
 kaggle==1.5.13
