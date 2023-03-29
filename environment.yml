@@ -7,3 +7,4 @@ dependencies:
   - pip==23.0.1
   - pip:
     - -r requirements.txt
+  - sphinx==6.1.3
