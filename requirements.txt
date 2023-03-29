@@ -13,3 +13,4 @@ pyvista==0.37.0
 scikit-learn==1.2.2
 seaborn==0.12.2
 statsmodels==0.13.5
+pydata-sphinx-theme==0.13.2
