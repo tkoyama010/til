@@ -22,7 +22,7 @@ pyvista.start_xvfb()
 
 
 # %%
-# mesh = pv.Sphere()
-# plotter = pyvista.Plotter()
-# plotter.add_mesh(mesh)
-# plotter.show()
+mesh = pyvista.Sphere()
+plotter = pyvista.Plotter()
+plotter.add_mesh(mesh)
+plotter.show()
