@@ -11,9 +11,24 @@
 # ---
 
 # %% [markdown]
-# # Jupytextの動作確認
+# # タイタニック号 災害から学ぶ機械学習
 #
-# このノートはJupytextの動作確認を行うために作成したものです。
+# ## データの取得
+#
+# Titanicのデータを取得します。
+
+# %%
+# !kaggle competitions download -c titanic --quiet
+
+# %% [markdown]
+# ダウンロードの際には`kaggle.json`ファイルを `~/.kaggle/kaggle.json` に配置しておく必要があります。
+# `titanic.zip`ファイルがダウンロードされますのでカレントディレクトリに展開します。
+
+# %%
+# !unzip titanic.zip
+
+# %% [markdown]
+# `train.csv` ファイルに訓練用のデータが保存されていますので `pandas.read_csv` で読み込みます。
 
 # %%
 print("Hello World!")
