@@ -18,8 +18,8 @@
 # %%
 import pyvista
 
-# pyvista.start_xvfb()
-#
+pyvista.start_xvfb()
+
 # mesh = pv.Sphere()
 # plotter = pyvista.Plotter()
 # plotter.add_mesh(mesh)
