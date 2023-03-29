@@ -35,6 +35,7 @@ import getfem as gf
 
 # %%
 import pyvista as pv
+import numpy as np
 from pyvista.examples import cells as example_cells, plot_cell
 
 grid = pv.CylinderStructured(
