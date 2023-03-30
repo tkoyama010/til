@@ -4,6 +4,6 @@
 
 ## codespaceの環境設定
 
-1. `conda activate` を実行する。
+1. `source activate base` を実行する。
 1. `bash codespace-install.sh` を実行する。
 
