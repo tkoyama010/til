@@ -1,4 +1,4 @@
-name: base
+name: getfem-dev
 channels:
   - conda-forge
   - defaults
