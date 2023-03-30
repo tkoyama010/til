@@ -13,5 +13,5 @@ RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bi
 #     && pipx reinstall-all
 
 # [Optional] Uncomment this section to install additional OS packages.
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends libgl1-mesa-glx libxrender1 xvfb zip
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#   && apt-get -y install --no-install-recommends libgl1-mesa-glx libxrender1 xvfb zip
