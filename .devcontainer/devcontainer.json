@@ -1,14 +1,24 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/miniconda
 {
-    "id": "miniconda",
-    "version": "1.1.1",
-    "name": "Miniconda (Python 3)",
-    "description": "Develop Miniconda applications in Python 3. Installs dependencies from your environment.yml file and the Python extension.",
-    "documentationURL": "https://github.com/devcontainers/templates/tree/main/src/miniconda",
-    "publisher": "Dev Container Spec Maintainers",
-    "licenseURL": "https://github.com/devcontainers/templates/blob/main/LICENSE",
-    "platforms": [
-        "Python",
-        "Anaconda",
-        "Miniconda"
-    ]
+	"name": "Miniconda (Python 3)",
+	"build": { 
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	}
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "python --version",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
