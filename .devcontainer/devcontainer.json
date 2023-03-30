@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/miniconda
 {
 	"name": "Miniconda (Python 3)",
-	"build": { 
+	"build": {
 		"context": "..",
 		"dockerfile": "Dockerfile"
 	}
