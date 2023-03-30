@@ -49,3 +49,16 @@ example_cells.plot_cell(grid)
 # %% [markdown]
 # ## メッシュの作成
 # 今回のメッシュはPyVistaを使用して作成します。
+
+# %%
+import pyvista as pv
+import numpy as np
+from pyvista.examples import cells as example_cells, plot_cell
+
+pv.start_xvfb()
+pv.set_jupyter_backend("panel")
+
+grid = pv.CylinderStructured(
+    radius=np.linspace(0.0, 50.0, 8), theta_resolution=4, z_resolution=2
+)
+example_cells.plot_cell(grid)
