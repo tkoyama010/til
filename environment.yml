@@ -1,4 +1,4 @@
-name: getfem-torsion
+name: development
 channels:
   - conda-forge
   - defaults
