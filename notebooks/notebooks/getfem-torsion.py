@@ -59,6 +59,6 @@ pv.start_xvfb()
 pv.set_jupyter_backend("panel")
 
 grid = pv.CylinderStructured(
-    radius=np.linspace(0.0, 50.0, 8), theta_resolution=4, z_resolution=2
+    radius=np.linspace(0.0, 50.0, 8), height=500.0, theta_resolution=16, z_resolution=25
 )
 example_cells.plot_cell(grid)
