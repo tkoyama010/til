@@ -1,0 +1,12 @@
+name: notebooks
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - getfem==5.4.2
+  - pip==23.0.1
+  - pip:
+    - -r requirements.txt
+  - sphinx==5.0.2
+  - pydata-sphinx-theme==0.13.1
+  - sphinx-book-theme==1.0.0
