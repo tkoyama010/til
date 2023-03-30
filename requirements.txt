@@ -13,3 +13,4 @@ pyvista==0.38.5
 scikit-learn==1.2.2
 seaborn==0.12.2
 statsmodels==0.13.5
+jupytext==1.14.5
