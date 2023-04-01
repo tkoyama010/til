@@ -14,10 +14,6 @@ build:
       - "jupytext --from py:percent --to ipynb ./notebooks/notebooks/*.py"
       # Generate the Sphinx configuration for this Jupyter Book so it builds.
       - "jupyter-book config sphinx notebooks/"
-      # See https://github.com/ocropus/ocropy/issues/204
-      - rm -rf ~/.matplotlib
-      - rm -rf ~/.cache/matplotlib
-      - rm -rf ~/.cache/fontconfig/
 
 conda:
   environment: environment.yml
