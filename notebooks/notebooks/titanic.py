@@ -28,21 +28,21 @@
 # !unzip titanic.zip
 
 # %% [markdown]
-# `train.csv` ファイルに訓練用のデータが保存されていますので `pandas.read_csv` で読み込みます。
+# `train.csv` ファイルに訓練用のデータが保存されていますので `polars.read_csv` で読み込みます。
 
 # %%
-import pandas as pd
+import polars as pl
 
-train = pd.read_csv("train.csv")
+train = pl.read_csv("train.csv")
 train.head(3).style.set_table_attributes('style="font-size: 10px"')
 
 # %% [markdown]
-# `test.csv` ファイルにテスト用のデータが保存されていますので同様に `pandas.read_csv` で読み込みます。
+# `test.csv` ファイルにテスト用のデータが保存されていますので同様に `polars.read_csv` で読み込みます。
 
 # %%
-import pandas as pd
+import polars as pd
 
-test = pd.read_csv("test.csv")
+test = pl.read_csv("test.csv")
 test.head(3).style.set_table_attributes('style="font-size: 10px"')
 
 # %% [markdown]
