@@ -18,3 +18,4 @@ dependencies:
   - statsmodels==0.13.5
   - pydata-sphinx-theme==0.13.1
   - sphinx-book-theme==1.0.0
+  - polars==0.16.16
