@@ -2,7 +2,6 @@ name: notebooks
 channels:
   - conda-forge
 dependencies:
-  - python==3.11
   - getfem==5.4.2
   - ipyvtklink==0.2.3
   - jupyter-book==0.15.1
@@ -12,10 +11,10 @@ dependencies:
   - myst-nb==0.17.1
   - numpy==1.24.2
   - panel==0.14.4
+  - polars==0.16.16
+  - pydata-sphinx-theme==0.13.1
   - pyvista==0.38.5
   - scikit-learn==1.2.2
   - seaborn==0.12.2
-  - statsmodels==0.13.5
-  - pydata-sphinx-theme==0.13.1
   - sphinx-book-theme==1.0.0
-  - polars==0.16.16
+  - statsmodels==0.13.5
