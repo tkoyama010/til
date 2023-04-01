@@ -28,22 +28,22 @@
 # !unzip titanic.zip
 
 # %% [markdown]
-# `train.csv` ファイルに訓練用のデータが保存されていますので `polars.read_csv` で読み込みます。
+# `train.csv` ファイルに訓練用のデータが保存されていますので `pandas.read_csv` で読み込みます。
 
 # %%
-import polars as pl
+import pandas as pd
 
-train = pl.read_csv("train.csv")
-train.head(3).style.set_table_attributes('style="font-size: 10px"')
+train = pd.read_csv("train.csv")
+train.head(3)
 
 # %% [markdown]
-# `test.csv` ファイルにテスト用のデータが保存されていますので同様に `polars.read_csv` で読み込みます。
+# `test.csv` ファイルにテスト用のデータが保存されていますので同様に `pandas.read_csv` で読み込みます。
 
 # %%
-import polars as pd
+import pandas as pd
 
-test = pl.read_csv("test.csv")
-test.head(3).style.set_table_attributes('style="font-size: 10px"')
+test = pd.read_csv("test.csv")
+test.head(3)
 
 # %% [markdown]
 # また、 `seaborn` というライブラリを使用してもデータを取得することができます。
