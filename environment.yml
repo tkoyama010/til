@@ -1,9 +1,20 @@
-name: development
+name: notebooks
 channels:
   - conda-forge
-  - defaults
 dependencies:
-  - python==3.9.*
   - getfem==5.4.2
+  - ipyvtklink==0.2.3
+  - jupyter-book==0.15.1
+  - jupyterlab==3.6.2
+  - jupytext==1.14.5
+  - kaggle==1.5.13
+  - myst-nb==0.17.1
+  - numpy==1.24.2
+  - panel==0.14.4
+  - polars==0.16.16
+  - pydata-sphinx-theme==0.13.1
   - pyvista==0.38.5
-  - matplotlib==3.7.1
+  - scikit-learn==1.2.2
+  - seaborn==0.12.2
+  - sphinx-book-theme==1.0.0
+  - statsmodels==0.13.5

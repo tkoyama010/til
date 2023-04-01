@@ -16,7 +16,7 @@ build:
       - "jupyter-book config sphinx notebooks/"
 
 conda:
-  environment: environment_docs.yml
+  environment: environment.yml
 
 sphinx:
   builder: html
