@@ -32,4 +32,3 @@ mesh.export_to_vtk("mesh.vtk", "ascii")
 
 m = pv.read("mesh.vtk")
 m.plot()
-
