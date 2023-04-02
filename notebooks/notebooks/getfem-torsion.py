@@ -30,6 +30,7 @@
 # ## メッシュの作成
 # 今回のメッシュはGetFEMを使用して作成します。
 
+# %%
 import getfem as gf
 import numpy as np
 import pyvista as pv
