@@ -26,49 +26,17 @@
 # \frac{dP}{d\theta }=\begin{pmatrix}-\sin \theta &\cos \theta \end{pmatrix}
 # $$
 
-# %%
-import getfem as gf
-
 # %% [markdown]
 # ## メッシュの作成
-# 今回のメッシュはPyVistaを使用して作成します。
+# 今回のメッシュはGetFEMを使用して作成します。
 
-# %%
-import pyvista as pv
-import numpy as np
-from pyvista.examples import cells as example_cells, plot_cell
-
-pv.start_xvfb()
-pv.set_jupyter_backend("panel")
-
-grid = pv.CylinderStructured(
-    radius=np.linspace(0.0, 1.0, 2), theta_resolution=4, z_resolution=2
-)
-example_cells.plot_cell(grid)
-
-# %% [markdown]
-# ## メッシュの作成
-# 今回のメッシュはPyVistaを使用して作成します。
-
-# %%
-import pyvista as pv
-import numpy as np
-from pyvista.examples import cells as example_cells, plot_cell
-
-pv.start_xvfb()
-pv.set_jupyter_backend("panel")
-
-grid = pv.CylinderStructured(
-    radius=np.linspace(0.0, 50.0, 8), height=500.0, theta_resolution=16, z_resolution=25
-)
-example_cells.plot_cell(grid)
-
-# %%
 import getfem as gf
 import numpy as np
 import pyvista as pv
 
 pv.set_plot_theme("document")
+pv.start_xvfb()
+pv.set_jupyter_backend("panel")
 
 ###############################################################################
 # Numerical parameters
