@@ -55,7 +55,8 @@ import seaborn as sns
 sns.set_theme(style="darkgrid")
 
 # Load the example Titanic dataset
-df = sns.load_dataset("titanic")
+# df = sns.load_dataset("titanic")
+df = train
 
 # Make a custom palette with gendered colors
 pal = dict(male="#6495ED", female="#F08080")
