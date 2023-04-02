@@ -52,8 +52,6 @@ test.head(3)
 # see https://seaborn.pydata.org/examples/logistic_regression.html
 import seaborn as sns
 
-sns.set_theme(style="darkgrid")
-
 # Load the example Titanic dataset
 # df = sns.load_dataset("titanic")
 df = train
