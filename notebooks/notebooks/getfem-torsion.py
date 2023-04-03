@@ -36,8 +36,8 @@ import numpy as np
 import pyvista as pv
 
 pv.set_plot_theme("document")
-# pv.start_xvfb()
-# pv.set_jupyter_backend("panel")
+pv.start_xvfb()
+pv.set_jupyter_backend("panel")
 
 ###############################################################################
 # Numerical parameters
