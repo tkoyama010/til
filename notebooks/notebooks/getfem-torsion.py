@@ -35,10 +35,6 @@ import getfem as gf
 import numpy as np
 import pyvista as pv
 
-pv.set_plot_theme("document")
-pv.start_xvfb()
-pv.set_jupyter_backend("panel")
-
 ###############################################################################
 # Numerical parameters
 
@@ -141,6 +137,11 @@ mesh.set_region(BOTTOM_BOUND, fb2)
 # %%
 
 mesh.export_to_vtk("mesh.vtk", "ascii")
+import pyvista as pv
+
+pv.set_plot_theme("document")
+pv.start_xvfb()
+pv.set_jupyter_backend("panel")
 
 m = pv.read("mesh.vtk")
 plotter = pv.Plotter()
