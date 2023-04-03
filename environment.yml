@@ -3,7 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - getfem==5.4.2
-  - ipywidgets==8.0.4
+  - ipyvtklink==0.2.3
   - jupyter-book==0.15.1
   - jupyterlab==3.6.2
   - jupytext==1.14.5
@@ -19,4 +19,3 @@ dependencies:
   - seaborn==0.12.2
   - sphinx-book-theme==1.0.0
   - statsmodels==0.13.5
-  - trame==2.3.2
