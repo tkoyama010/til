@@ -27,7 +27,7 @@
 # $$
 
 # %% [markdown]
-# ## メッシュの作成
+# ## メッシュ生成
 # 今回のメッシュはGetFEMを使用して作成します。
 
 # %%
@@ -36,8 +36,8 @@ import numpy as np
 import pyvista as pv
 
 pv.set_plot_theme("document")
-pv.start_xvfb()
-pv.set_jupyter_backend("panel")
+# pv.start_xvfb()
+# pv.set_jupyter_backend("panel")
 
 ###############################################################################
 # Numerical parameters
@@ -113,9 +113,36 @@ for z_a, z_b in zip(z_as, z_bs):
                 ],
             )
 
+# %% [markdown]
+# ## 境界の選択
+#
+# 境界のそれぞれの部分には異なる境界条件を設定するため，境界のさまざまな部分には番号を付けます．
+# したがって，メッシュ上の要素面を選択し，メッシュ領域を定義する必要があります．
+# 1, 2はそれぞれ上境界，下境界です．
+# これらの境界番号は，モデルのブリックで使用されます．
+
+# %%
+
+fb1 = mesh.outer_faces_with_direction([0.0, 0.0, 1.0], 0.01)
+fb2 = mesh.outer_faces_with_direction([0.0, 0.0, -1.0], 0.01)
+
+TOP_BOUND = 1
+BOTTOM_BOUND = 2
+
+mesh.set_region(TOP_BOUND, fb1)
+mesh.set_region(BOTTOM_BOUND, fb2)
+
+# %% [markdown]
+# ## メッシュの描画
+#
+# メッシュをプレビューし，その妥当性を制御するために，次の手順を使用します．
+# 外部グラフィカルポストプロセッサPyVistaを使用する必要があります． 
+
+# %%
+
 mesh.export_to_vtk("mesh.vtk", "ascii")
 
 m = pv.read("mesh.vtk")
-plotter = pv.Plotter(off_screen=True)
+plotter = pv.Plotter()
 plotter.add_mesh(m, show_edges=True)
 plotter.show(cpos="zx")
