@@ -52,20 +52,30 @@ test.head(3)
 # see https://seaborn.pydata.org/examples/logistic_regression.html
 import seaborn as sns
 
-sns.set_theme(style="darkgrid")
-
 # Load the example Titanic dataset
-df = sns.load_dataset("titanic")
+# df = sns.load_dataset("titanic")
+df = train
 
 # Make a custom palette with gendered colors
 pal = dict(male="#6495ED", female="#F08080")
 
 # Show the survival probability as a function of age and sex
+# g = sns.lmplot(
+#     x="age",
+#     y="survived",
+#     col="sex",
+#     hue="sex",
+#     data=df,
+#     palette=pal,
+#     y_jitter=0.02,
+#     logistic=True,
+#     truncate=False,
+# )
 g = sns.lmplot(
-    x="age",
-    y="survived",
-    col="sex",
-    hue="sex",
+    x="Age",
+    y="Survived",
+    col="Sex",
+    hue="Sex",
     data=df,
     palette=pal,
     y_jitter=0.02,
