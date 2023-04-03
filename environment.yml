@@ -4,6 +4,7 @@ channels:
 dependencies:
   - getfem==5.4.2
   - ipyvtklink==0.2.3
+  - ipywidgets==8.0.4
   - jupyter-book==0.15.1
   - jupyterlab==3.6.2
   - jupytext==1.14.5
