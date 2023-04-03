@@ -141,7 +141,7 @@ import pyvista as pv
 
 pv.set_plot_theme("document")
 pv.start_xvfb()
-pv.set_jupyter_backend("trame")
+pv.set_jupyter_backend("panel")
 
 m = pv.read("mesh.vtk")
 plotter = pv.Plotter()
