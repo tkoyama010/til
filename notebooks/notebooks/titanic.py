@@ -17,11 +17,11 @@
 # print(mpl.get_cachedir())
 # cachedir_name = mpl.get_cachedir()
 # shutil.rmtree(cachedir_name)
-
-import sys
-
+#
+# import sys
+#
 # reload(sys)
-sys.setdefaultencoding("utf8")
+# sys.setdefaultencoding("utf8")
 
 # %% [markdown]
 # # タイタニック号 災害から学ぶ機械学習
