@@ -13,7 +13,8 @@
 # %% [markdown]
 # # One dimensional heat transfer with radiation
 #
-# この問題は1次元方向の熱伝導解析で発生する温度を確認するベンチマークです。The Standard NAFEMS BenchmarksにT2として掲載されています。
+# この問題は1次元方向の熱伝導解析で発生する温度を確認するベンチマークです。
+# The Standard NAFEMS BenchmarksにT2として掲載されています。
 
 # %% [markdown]
 # # メッシュ作成
