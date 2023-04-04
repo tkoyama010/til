@@ -10,6 +10,13 @@
 #       jupytext_version: 1.14.5
 # ---
 
+# %%
+import warnings
+
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    import matplotlib.pyplot as plt
+
 # %% [markdown]
 # # GetFEMによる丸棒のねじり解析
 #
