@@ -10,6 +10,10 @@
 #       jupytext_version: 1.14.5
 # ---
 
+# %%
+import matplotlib as mpl
+print mpl.get_cachedir()
+
 # %% [markdown]
 # # タイタニック号 災害から学ぶ機械学習
 #
