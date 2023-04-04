@@ -27,8 +27,13 @@
 # $$
 
 # %% [markdown]
+# ## モデルのパラメータ
+# ここで，問題のさまざまな物理パラメータおよび数値パラメータを定義しましょう．
+
+elements_degree = 1
+
+# %% [markdown]
 # ## メッシュ生成
-# 今回のメッシュはGetFEMを使用して作成します。
 
 # %%
 import getfem as gf
@@ -147,3 +152,13 @@ m = pv.read("mesh.vtk")
 plotter = pv.Plotter()
 plotter.add_mesh(m, show_edges=True)
 plotter.show(cpos="zx")
+
+# %% [markdown]
+# ## 有限要素法と積分法の定義
+# 有限要素法を定義します．変位フィールドを近似する最初の1つは，変位フィールドを近似する mfu です．
+# これはベクトルフィールドでPythonでは次のように定義されます．
+
+# %%
+
+mfu = gf.MeshFem(mesh, 2)
+mfu.set_classical_fem(elements_degree)
