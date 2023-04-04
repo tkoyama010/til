@@ -23,9 +23,10 @@
 # reload(sys)
 # sys.setdefaultencoding("utf8")
 
-import warnings;
+import warnings
+
 with warnings.catch_warnings():
-    warnings.simplefilter("ignore"); 
+    warnings.simplefilter("ignore")
     import matplotlib.pyplot as plt
 
 # %% [markdown]
