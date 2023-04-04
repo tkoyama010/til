@@ -11,6 +11,7 @@
 # ---
 
 # %%
+# https://github.com/matplotlib/matplotlib/issues/5836#issuecomment-179592427
 import warnings
 
 with warnings.catch_warnings():
