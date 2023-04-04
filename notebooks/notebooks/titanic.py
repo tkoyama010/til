@@ -16,7 +16,7 @@ import shutil
 
 print(mpl.get_cachedir())
 cachedir_name = mpl.get_cachedir()
-shutil.rmtree(cachedir_name )
+shutil.rmtree(cachedir_name)
 
 # %% [markdown]
 # # タイタニック号 災害から学ぶ機械学習
