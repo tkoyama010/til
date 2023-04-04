@@ -23,6 +23,11 @@
 # reload(sys)
 # sys.setdefaultencoding("utf8")
 
+import warnings;
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore"); 
+    import matplotlib.pyplot as plt
+
 # %% [markdown]
 # # タイタニック号 災害から学ぶ機械学習
 #
