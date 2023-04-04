@@ -11,18 +11,7 @@
 # ---
 
 # %%
-# import matplotlib as mpl
-# import shutil
-#
-# print(mpl.get_cachedir())
-# cachedir_name = mpl.get_cachedir()
-# shutil.rmtree(cachedir_name)
-#
-# import sys
-#
-# reload(sys)
-# sys.setdefaultencoding("utf8")
-
+# https://github.com/matplotlib/matplotlib/issues/5836#issuecomment-179592427
 import warnings
 
 with warnings.catch_warnings():
