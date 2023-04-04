@@ -12,8 +12,11 @@
 
 # %%
 import matplotlib as mpl
+import shutil
 
 print(mpl.get_cachedir())
+cachedirname = mpl.get_cachedir()
+shutil.rmtree(cachedirname)
 
 # %% [markdown]
 # # タイタニック号 災害から学ぶ機械学習
