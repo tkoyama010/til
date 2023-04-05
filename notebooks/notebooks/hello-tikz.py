@@ -14,8 +14,6 @@
 # # Tikzの動作確認
 #
 # このノートはTikzの動作確認を行うために作成したものです。
-
-# %% [markdown]
 # ```{tikz}
 # :include: example.tikz
 # ```
