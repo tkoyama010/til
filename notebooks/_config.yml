@@ -34,3 +34,5 @@ html:
 sphinx:
   config:
     suppress_warnings: ["mystnb.unknown_mime_type"]
+  extra_extensions:
+    - sphinxcontrib.tikz
