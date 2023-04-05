@@ -10,20 +10,12 @@
 #       jupytext_version: 1.14.5
 # ---
 
-# %%
-# https://github.com/matplotlib/matplotlib/issues/5836#issuecomment-179592427
-import warnings
-
-with warnings.catch_warnings():
-    warnings.simplefilter("ignore")
-    import matplotlib.pyplot as plt
-
 # %% [markdown]
 # # Tikzの動作確認
 #
 # このノートはTikzの動作確認を行うために作成したものです。
 
-# %%
+# %% [markdown]
 # ```{tikz}
 # :include: example.tikz
 # ```
