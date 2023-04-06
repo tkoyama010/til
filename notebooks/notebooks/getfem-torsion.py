@@ -33,9 +33,13 @@ with warnings.catch_warnings():
 # $$
 # \frac{dP}{d\theta }=\begin{pmatrix}-\sin \theta &\cos \theta \end{pmatrix}
 # $$
+
+# %% [markdown]
+# # Tikzの動作確認
 #
+# このノートはTikzの動作確認を行うために作成したものです。
 # ```{tikz}
-# :include: getfem-torsion.tikz
+# :include: example.tikz
 # ```
 
 # %% [markdown]
