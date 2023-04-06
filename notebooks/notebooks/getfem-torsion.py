@@ -33,6 +33,10 @@ with warnings.catch_warnings():
 # $$
 # \frac{dP}{d\theta }=\begin{pmatrix}-\sin \theta &\cos \theta \end{pmatrix}
 # $$
+#
+# ```{tikz}
+# :include: getfem-torsion.tikz
+# ```
 
 # %% [markdown]
 # ## モデルのパラメータ
