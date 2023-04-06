@@ -1,0 +1,9 @@
+\node[cylinder,draw=black,thick,aspect=0.7,minimum height=1.7cm,minimum width=1.5cm,shape border rotate=90,cylinder uses custom fill, cylinder body fill=red!30,cylinder end fill=red!10] (A) {A};
+\draw[dashed]
+  let \p1 = ($ (A.after bottom) - (A.before bottom) $),
+      \n1 = {0.5*veclen(\x1,\y1)-\pgflinewidth},
+      \p2 = ($ (A.bottom) - (A.after bottom)!.5!(A.before bottom) $),
+      \n2 = {veclen(\x2,\y2)-\pgflinewidth}
+in
+  ([xshift=-\pgflinewidth] A.before bottom) arc [start angle=0, end angle=180,
+  x radius=\n1, y radius=\n2];
