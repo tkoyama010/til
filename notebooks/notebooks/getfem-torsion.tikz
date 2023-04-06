@@ -1,7 +1,1 @@
-%uncomment if require: \path (0,310); %set diagram left start at 0, and has height of 310
-%Shape: Rectangle [id:dp0815305459351312]
-\draw   (79.51,63.5) -- (149.51,63.5) -- (149.51,228.5) -- (79.51,228.5) -- cycle ;
-%Shape: Can [id:dp9351689743636555]
-\draw  [fill={rgb, 255:red, 200; green, 200; blue, 200 }  ,fill opacity=1 ][line width=2.25]  (583.05,184) -- (115.88,184) .. controls (104.36,184) and (95.02,166.66) .. (95.02,145.27) .. controls (95.02,123.87) and (104.36,106.53) .. (115.88,106.53) -- (583.05,106.53) .. controls (594.57,106.53) and (603.9,123.87) .. (603.9,145.27) .. controls (603.9,166.66) and (594.57,184) .. (583.05,184) .. controls (571.53,184) and (562.2,166.66) .. (562.2,145.27) .. controls (562.2,123.87) and (571.53,106.53) .. (583.05,106.53) ;
-%Shape: Ellipse [id:dp6092410981535754]
-\draw  [dash pattern={on 4.5pt off 4.5pt}][line width=0.75]  (95.03,146) .. controls (95.03,124.46) and (103.75,107) .. (114.51,107) .. controls (125.28,107) and (134,124.46) .. (134,146) .. controls (134,167.54) and (125.28,185) .. (114.51,185) .. controls (103.75,185) and (95.03,167.54) .. (95.03,146) -- cycle ;
+\draw (0,0) ellipse (1.25 and 0.5);
