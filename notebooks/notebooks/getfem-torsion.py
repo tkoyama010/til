@@ -35,11 +35,8 @@ with warnings.catch_warnings():
 # $$
 
 # %% [markdown]
-# # Tikzの動作確認
-#
-# このノートはTikzの動作確認を行うために作成したものです。
 # ```{tikz}
-# :include: example.tikz
+# :include: getfem-torsion.tikz
 # ```
 
 # %% [markdown]
