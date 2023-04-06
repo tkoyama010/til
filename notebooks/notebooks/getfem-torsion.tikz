@@ -1,25 +1,25 @@
 %uncomment if require: \path (0,310); %set diagram left start at 0, and has height of 310
 
-%Shape: Can [id:dp4392234889525308] 
+%Shape: Can [id:dp4392234889525308]
 \draw  [fill={rgb, 255:red, 155; green, 155; blue, 155 }  ,fill opacity=1 ][line width=2.25]  (541.47,272.48) -- (157.46,272.48) .. controls (122.98,272.48) and (95.02,220.56) .. (95.02,156.51) .. controls (95.02,92.46) and (122.98,40.53) .. (157.46,40.53) -- (541.47,40.53) .. controls (575.95,40.53) and (603.9,92.46) .. (603.9,156.51) .. controls (603.9,220.56) and (575.95,272.48) .. (541.47,272.48) .. controls (506.99,272.48) and (479.03,220.56) .. (479.03,156.51) .. controls (479.03,92.46) and (506.99,40.53) .. (541.47,40.53) ;
-%Straight Lines [id:da6477069286406345] 
+%Straight Lines [id:da6477069286406345]
 \draw    (547,141.5) -- (672,142.48) ;
 \draw [shift={(674,142.5)}, rotate = 180.45] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Straight Lines [id:da9132340872671849] 
+%Straight Lines [id:da9132340872671849]
 \draw    (561,93.5) -- (547,141.5) ;
-%Shape: Arc [id:dp8747914616717745] 
-\draw  [draw opacity=0] (550.51,124.21) .. controls (557.82,127.1) and (563.41,133.42) .. (565.3,141.18) -- (541.5,147) -- cycle ; \draw   (550.51,124.21) .. controls (557.82,127.1) and (563.41,133.42) .. (565.3,141.18) ;  
-%Straight Lines [id:da42350103898268965] 
+%Shape: Arc [id:dp8747914616717745]
+\draw  [draw opacity=0] (550.51,124.21) .. controls (557.82,127.1) and (563.41,133.42) .. (565.3,141.18) -- (541.5,147) -- cycle ; \draw   (550.51,124.21) .. controls (557.82,127.1) and (563.41,133.42) .. (565.3,141.18) ;
+%Straight Lines [id:da42350103898268965]
 \draw    (561,93.5) -- (531.75,77.46) ;
 \draw [shift={(530,76.5)}, rotate = 28.74] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Shape: Ellipse [id:dp2272832408640597] 
+%Shape: Ellipse [id:dp2272832408640597]
 \draw  [dash pattern={on 4.5pt off 4.5pt}] (513,150.5) .. controls (513,116.81) and (528.67,89.5) .. (548,89.5) .. controls (567.33,89.5) and (583,116.81) .. (583,150.5) .. controls (583,184.19) and (567.33,211.5) .. (548,211.5) .. controls (528.67,211.5) and (513,184.19) .. (513,150.5) -- cycle ;
-%Curve Lines [id:da26395041950746445] 
+%Curve Lines [id:da26395041950746445]
 \draw    (468,117.5) .. controls (481,82.5) and (527,132.5) .. (548,89.5) ;
-%Straight Lines [id:da7249597172837856] 
+%Straight Lines [id:da7249597172837856]
 \draw    (559.75,222.04) -- (530.5,206) ;
 \draw [shift={(561.5,223)}, rotate = 208.74] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-%Shape: Ellipse [id:dp4839215061587565] 
+%Shape: Ellipse [id:dp4839215061587565]
 \draw  [dash pattern={on 4.5pt off 4.5pt}][line width=0.75]  (95.03,156.92) .. controls (95.03,93.09) and (122.56,41.34) .. (156.51,41.34) .. controls (190.47,41.34) and (218,93.09) .. (218,156.92) .. controls (218,220.75) and (190.47,272.5) .. (156.51,272.5) .. controls (122.56,272.5) and (95.03,220.75) .. (95.03,156.92) -- cycle ;
 
 % Text Node
