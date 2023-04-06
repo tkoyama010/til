@@ -1,9 +1,7 @@
-\node[cylinder,draw=black,thick,aspect=0.7,minimum height=1.7cm,minimum width=1.5cm,shape border rotate=90,cylinder uses custom fill, cylinder body fill=red!30,cylinder end fill=red!10] (A) {A};
-\draw[dashed]
-  let \p1 = ($ (A.after bottom) - (A.before bottom) $),
-      \n1 = {0.5*veclen(\x1,\y1)-\pgflinewidth},
-      \p2 = ($ (A.bottom) - (A.after bottom)!.5!(A.before bottom) $),
-      \n2 = {veclen(\x2,\y2)-\pgflinewidth}
-in
-  ([xshift=-\pgflinewidth] A.before bottom) arc [start angle=0, end angle=180,
-  x radius=\n1, y radius=\n2];
+\draw (0,0) ellipse (1.25 and 0.5);
+\draw (-1.25,0) -- (-1.25,-3.5);
+\draw (-1.25,-3.5) arc (180:360:1.25 and 0.5);
+\draw [dashed] (-1.25,-3.5) arc (180:360:1.25 and -0.5);
+\draw (1.25,-3.5) -- (1.25,0);  
+\fill [gray,opacity=0.5] (-1.25,0) -- (-1.25,-3.5) arc (180:360:1.25 and 0.5) -- (1.25,0) arc (0:180:1.25 and -0.5);
+\end{tikzpicture}
