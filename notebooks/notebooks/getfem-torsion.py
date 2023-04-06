@@ -165,7 +165,7 @@ pv.set_jupyter_backend("panel")
 m = pv.read("mesh.vtk")
 plotter = pv.Plotter()
 plotter.add_mesh(m, show_edges=True)
-plotter.show(cpos="zx")
+plotter.show(cpos="xy")
 
 # %% [markdown]
 # ## 有限要素法と積分法の定義
