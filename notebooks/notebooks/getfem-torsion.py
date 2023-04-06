@@ -22,13 +22,13 @@ with warnings.catch_warnings():
 # # GetFEMによる丸棒のねじり解析
 #
 #
-# 半径方向の単位ベクトル $P$ は以下の式であらわされる。
+# 半径方向の単位ベクトル $P$ は以下の式であらわされます．
 #
 # $$
 # P＝\begin{pmatrix}\cos \theta &\sin \theta \end{pmatrix}
 # $$
 #
-# ベクトル $P$ を角度 $\theta$ で微分すると接線方向の単位ベクトルを得ることができる。
+# ベクトル $P$ を角度 $\theta$ で微分すると接線方向の単位ベクトルを得ることができます．
 #
 # $$
 # \frac{dP}{d\theta }=\begin{pmatrix}-\sin \theta &\cos \theta \end{pmatrix}
