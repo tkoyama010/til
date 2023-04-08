@@ -4,7 +4,6 @@
 \coordinate (O') at (-2, 0);
 \coordinate (O) at (2, 0);
 \draw[<->] (-2, 1.5) -- (2, 1.5);
-\draw[<->] (0, -1) -- (0, 1);
 \draw[dash dot dot, line width=1pt] (-2,-1.5) -- (-2,1.75);
 \draw[dash dot dot, line width=1pt] (-3.0,0) -- (3.0,0);
 \draw[dash dot dot, line width=1pt] (2,-1.5) -- (2,1.75);
@@ -25,6 +24,5 @@
 \node[above left] at (A) {$A$};
 \node[above left] at (B') {$B'$};
 \node[above left] at (B) {$B$};
-\node[above right] at (0,0) {$d$};
 \node[above right] at (O) {$O$};
 \node[above] at (0,1.5) {$l$};
