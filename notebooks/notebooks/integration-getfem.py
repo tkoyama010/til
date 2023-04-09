@@ -84,3 +84,8 @@ print(im.pts())
 im = gf.Integ("IM_GAUSS1D(5)")
 print(im)
 print(im.pts())
+
+# %%
+im = gf.Integ("IM_PRODUCT(IM_GAUSS1D(3), IM_GAUSS1D(3))")
+print(im)
+print(im.pts())
