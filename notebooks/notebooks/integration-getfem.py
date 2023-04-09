@@ -58,8 +58,24 @@ ax.plot(
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
 ax.set_xticks([-0.2, 0.0, 0.5, 1.0, 1.2])
+ax.set_xticklabels(
+    [
+        "",
+        r"$0$",
+        r"$\dfrac{1}{2}$",
+        r"$1$",
+        "",
+    ]
+)
 ax.set_ylim(-0.2, 1.2)
 ax.set_yticks([-0.2, 0.5, 1.2])
+ax.set_yticklabels(
+    [
+        "",
+        "",
+        "",
+    ]
+)
 plt.show()
 
 # %%
@@ -97,8 +113,25 @@ ax.set_xticks(
         1.2,
     ]
 )
+ax.set_xticklabels(
+    [
+        "",
+        r"$0$",
+        r"$\dfrac{1}{2}\left(1 - \sqrt{\dfrac{1}{3}}\right)$",
+        r"$\dfrac{1}{2}\left(1 + \sqrt{\dfrac{1}{3}}\right)$",
+        r"$1$",
+        "",
+    ]
+)
 ax.set_ylim(-0.2, 1.2)
 ax.set_yticks([-0.2, 0.5, 1.2])
+ax.set_yticklabels(
+    [
+        "",
+        "",
+        "",
+    ]
+)
 plt.show()
 
 # %%
@@ -137,8 +170,26 @@ ax.set_xticks(
         1.2,
     ]
 )
+ax.set_xticklabels(
+    [
+        "",
+        r"$0$",
+        r"$\dfrac{1}{2}\left(1 - \sqrt{\dfrac{3}{5}}\right)$",
+        r"$\dfrac{1}{2}$",
+        r"$\dfrac{1}{2}\left(1 + \sqrt{\dfrac{3}{5}}\right)$",
+        r"$1$",
+        "",
+    ]
+)
 ax.set_ylim(-0.2, 1.2)
 ax.set_yticks([-0.2, 0.5, 1.2])
+ax.set_yticklabels(
+    [
+        "",
+        "",
+        "",
+    ]
+)
 plt.show()
 
 # %%
@@ -178,6 +229,16 @@ ax.set_xticks(
         1.2,
     ]
 )
+ax.set_xticklabels(
+    [
+        "",
+        r"$0$",
+        r"$\dfrac{1}{2}\left(1 - \sqrt{\dfrac{1}{3}}\right)$",
+        r"$\dfrac{1}{2}\left(1 + \sqrt{\dfrac{1}{3}}\right)$",
+        r"$1$",
+        "",
+    ]
+)
 ax.set_ylim(-0.2, 1.2)
 ax.set_yticks(
     [
@@ -187,6 +248,16 @@ ax.set_yticks(
         0.5 + np.sqrt(1.0 / 3.0) / 2.0,
         1.0,
         1.2,
+    ]
+)
+ax.set_yticklabels(
+    [
+        "",
+        r"$0$",
+        r"$\dfrac{1}{2}\left(1 - \sqrt{\dfrac{1}{3}}\right)$",
+        r"$\dfrac{1}{2}\left(1 + \sqrt{\dfrac{1}{3}}\right)$",
+        r"$1$",
+        "",
     ]
 )
 plt.show()
