@@ -9,3 +9,4 @@ chapters:
 - file: notebooks/hello-getfem
 - file: notebooks/hello-pyvista
 - file: notebooks/hello-tikz
+- file: notebooks/integration-getfem
