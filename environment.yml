@@ -12,9 +12,6 @@ dependencies:
   - myst-nb==0.17.1
   - numpy==1.24.2
   - panel==0.14.4
-  - pip==23.0.1
-  - pip:
-    - sphinxcontrib-tikz==0.4.16
   - polars==0.16.16
   - pydata-sphinx-theme==0.13.1
   - pyvista==0.38.5
