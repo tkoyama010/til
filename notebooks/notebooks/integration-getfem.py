@@ -23,6 +23,11 @@
 # %%
 import getfem as gf
 import numpy as np
+import matplotlib.pyplot as plt
+import pyvista as pv
+
+pv.start_xvfb()
+pv.set_jupyter_backend("panel")
 
 # %% [markdown]
 # ## メッシュ生成
@@ -40,10 +45,6 @@ print(mesh)
 # メッシュをプレビューし，その妥当性を制御するために，次の手順を使用します．
 
 # %%
-import pyvista as pv
-
-pv.start_xvfb()
-pv.set_jupyter_backend("panel")
 
 mesh.export_to_vtk("mesh.vtk", "ascii")
 m = pv.read("mesh.vtk")
@@ -80,8 +81,6 @@ print("im.coeffs()")
 print(im.coeffs())
 
 # %%
-import matplotlib.pyplot as plt
-
 pts = im.pts()
 plt.plot(
     pts[0],
@@ -103,10 +102,10 @@ print("im.coeffs()")
 print(im.coeffs())
 
 # %%
-import matplotlib.pyplot as plt
-
 pts = im.pts()
-plt.plot(
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(
     pts[0],
     pts[0] * 0.0,
     marker="o",
@@ -114,7 +113,6 @@ plt.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
-plt.show()
 
 # %%
 im = gf.Integ("IM_GAUSS1D(5)")
@@ -126,10 +124,10 @@ print("im.coeffs()")
 print(im.coeffs())
 
 # %%
-import matplotlib.pyplot as plt
-
 pts = im.pts()
-plt.plot(
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(
     pts[0],
     pts[0] * 0.0,
     marker="o",
@@ -137,7 +135,6 @@ plt.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
-plt.show()
 
 # %%
 im = gf.Integ("IM_PRODUCT(IM_GAUSS1D(3), IM_GAUSS1D(3))")
@@ -149,10 +146,10 @@ print("im.coeffs()")
 print(im.coeffs())
 
 # %%
-import matplotlib.pyplot as plt
-
 pts = im.pts()
-plt.plot(
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(
     pts[0],
     pts[1],
     marker="o",
@@ -160,7 +157,6 @@ plt.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
-plt.show()
 
 # %%
 im = gf.Integ("IM_QUAD(3)")
@@ -172,10 +168,10 @@ print("im.coeffs()")
 print(im.coeffs())
 
 # %%
-import matplotlib.pyplot as plt
-
 pts = im.pts()
-plt.plot(
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(
     pts[0],
     pts[1],
     marker="o",
@@ -183,4 +179,3 @@ plt.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
-plt.show()
