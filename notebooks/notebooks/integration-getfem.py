@@ -11,9 +11,9 @@
 # ---
 
 # %% [markdown]
-# # GetFEMの動作確認
+# # GetFEMの積分点確認
 #
-# このノートはGetFEMの動作確認を行うために作成したものです。
+# このノートではGetFEMの積分点を確認します。
 
 # %%
 import getfem as gf
