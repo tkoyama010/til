@@ -43,6 +43,7 @@ print(im.coeffs())
 
 # %%
 pts = im.pts()
+coeffs = im.coeffs()
 fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.plot([0.0, 1.0], [0.5, 0.5], color="black", linewidth=2)
@@ -55,6 +56,9 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+for x, coeff in zip(pts[0], coeffs):
+    label = "{:.3f}".format(coeff)
+    ax.annotate(label, (x, 0.5), xytext=(0.0, 10.0), textcoords="offset points")
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
 ax.set_xticks([-0.2, 0.0, 0.5, 1.0, 1.2])
@@ -89,6 +93,7 @@ print(im.coeffs())
 
 # %%
 pts = im.pts()
+coeffs = im.coeffs()
 fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.plot([0.0, 1.0], [0.5, 0.5], color="black", linewidth=2)
@@ -101,6 +106,9 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+for x, coeff in zip(pts[0], coeffs):
+    label = "{:.3f}".format(coeff)
+    ax.annotate(label, (x, 0.5), xytext=(0.0, 10.0), textcoords="offset points")
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
 ax.set_xticks(
@@ -145,6 +153,7 @@ print(im.coeffs())
 
 # %%
 pts = im.pts()
+coeffs = im.coeffs()
 fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.plot([0.0, 1.0], [0.5, 0.5], color="black", linewidth=2)
@@ -157,6 +166,9 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+for x, coeff in zip(pts[0], coeffs):
+    label = "{:.3f}".format(coeff)
+    ax.annotate(label, (x, 0.5), xytext=(0.0, 10.0), textcoords="offset points")
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
 ax.set_xticks(
@@ -203,6 +215,7 @@ print(im.coeffs())
 
 # %%
 pts = im.pts()
+coeffs = im.coeffs()
 fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.plot(
@@ -217,6 +230,9 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+for x, y, coeff in zip(pts[0], pts[1], coeffs):
+    label = "{:.3f}".format(coeff)
+    ax.annotate(label, (x, y), xytext=(0.0, 10.0), textcoords="offset points")
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
 ax.set_xticks(
