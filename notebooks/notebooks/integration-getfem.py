@@ -54,3 +54,19 @@ plotter.add_mesh(
     pv.PolyData(m.points), color="red", point_size=10, render_points_as_spheres=True
 )
 plotter.show(cpos="xy")
+
+# %% [markdown]
+# ```{Tip}
+# 上に示したジオメトリはインタラクティブです。
+# ```
+
+# %% [markdown]
+# ## 積分法の定義
+#
+# 定義するのは積分法 `mim` です．GetFEM にデフォルトの積分法はありません．
+# したがって，これは積分法を定義するためには必須です．
+# もちろん，積分法の次数は，選択された有限要素法に好都合な積分を行うため，十分に選定しなければなりません．
+
+# %%
+im = gf.Integ("IM_GAUSS1D(2)")
+print(im)
