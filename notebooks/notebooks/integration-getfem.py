@@ -48,6 +48,7 @@ ax = fig.add_subplot(111)
 ax.plot(
     pts[0],
     pts[0] * 0.0 + 0.5,
+    linewidth=0,
     marker="o",
     markersize=10,
     markeredgecolor="red",
@@ -76,6 +77,7 @@ ax = fig.add_subplot(111)
 ax.plot(
     pts[0],
     pts[0] * 0.0 + 0.5,
+    linewidth=0,
     marker="o",
     markersize=10,
     markeredgecolor="red",
@@ -113,6 +115,7 @@ ax = fig.add_subplot(111)
 ax.plot(
     pts[0],
     pts[0] * 0.0 + 0.5,
+    linewidth=0,
     marker="o",
     markersize=10,
     markeredgecolor="red",
@@ -132,7 +135,7 @@ ax.set_xticks(
     ]
 )
 ax.set_ylim(-0.2, 1.2)
-ax.set_yticks([-0.2, 1.2])
+ax.set_yticks([-0.2, 0.5, 1.2])
 plt.show()
 
 # %%
@@ -151,6 +154,7 @@ ax = fig.add_subplot(111)
 ax.plot(
     pts[0],
     pts[1],
+    linewidth=0,
     marker="o",
     markersize=10,
     markeredgecolor="red",
