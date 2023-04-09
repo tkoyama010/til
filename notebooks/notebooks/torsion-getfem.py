@@ -168,6 +168,11 @@ plotter.add_mesh(m, show_edges=True)
 plotter.show(cpos="yz")
 
 # %% [markdown]
+# ```{Tip}
+# 上に示したジオメトリはインタラクティブです。
+# ```
+
+# %% [markdown]
 # ## 有限要素法と積分法の定義
 # 有限要素法を定義します．変位フィールドを近似する最初の1つは，変位フィールドを近似する mfu です．
 # これはベクトルフィールドでPythonでは次のように定義されます．
