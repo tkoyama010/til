@@ -36,7 +36,7 @@ with warnings.catch_warnings():
 
 # %% [markdown]
 # ```{tikz}
-# :include: getfem-torsion.tikz
+# :include: torsion-getfem.tikz
 # ```
 
 # %% [markdown]

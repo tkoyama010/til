@@ -1,2 +1,2 @@
-getfem-torsion.pdf: getfem-torsion.tikz
-	pdflatex getfem-torsion.tex
+getfem-torsion.pdf: torsion-getfem.tikz
+	pdflatex torsion-getfem.tex
