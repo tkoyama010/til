@@ -9,4 +9,4 @@ chapters:
 - file: notebooks/getfem-import
 - file: notebooks/pyvista-import
 - file: notebooks/hello-tikz
-- file: notebooks/getfem-torsion
+- file: notebooks/torsion-getfem
