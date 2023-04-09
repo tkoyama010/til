@@ -105,3 +105,12 @@ print("im.pts()")
 print(im.pts())
 print("im.coeffs()")
 print(im.coeffs())
+
+# %%
+im = gf.Integ("IM_QUAD(3)")
+print("im")
+print(im)
+print("im.pts()")
+print(im.pts())
+print("im.coeffs()")
+print(im.coeffs())
