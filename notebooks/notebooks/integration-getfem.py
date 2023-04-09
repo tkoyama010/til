@@ -88,7 +88,7 @@ ax.plot(
     pts[0],
     pts[0] * 0.0 + 0.5,
     marker="o",
-    markersize=20,
+    markersize=10,
     markeredgecolor="red",
     markerfacecolor="red",
 )
@@ -116,7 +116,7 @@ ax.plot(
     pts[0],
     pts[0] * 0.0 + 0.5,
     marker="o",
-    markersize=20,
+    markersize=10,
     markeredgecolor="red",
     markerfacecolor="red",
 )
@@ -144,7 +144,7 @@ ax.plot(
     pts[0],
     pts[0] * 0.0 + 0.5,
     marker="o",
-    markersize=20,
+    markersize=10,
     markeredgecolor="red",
     markerfacecolor="red",
 )
@@ -172,7 +172,7 @@ ax.plot(
     pts[0],
     pts[1],
     marker="o",
-    markersize=20,
+    markersize=10,
     markeredgecolor="red",
     markerfacecolor="red",
 )
@@ -200,7 +200,7 @@ ax.plot(
     pts[0],
     pts[1],
     marker="o",
-    markersize=20,
+    markersize=10,
     markeredgecolor="red",
     markerfacecolor="red",
 )
