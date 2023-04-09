@@ -94,9 +94,9 @@ ax.plot(
 )
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
-ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
+ax.set_xticks([-0.2, 0.0, 0.5, 1.0, 1.2])
 ax.set_ylim(-0.2, 1.2)
-ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
+ax.set_yticks([-0.2, 0.5, 1.2])
 plt.show()
 
 # %%
@@ -122,9 +122,18 @@ ax.plot(
 )
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
-ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
+ax.set_xticks(
+    [
+        -0.2,
+        0.0,
+        0.5 - np.sqrt(1.0 / 3.0) / 2.0,
+        0.5 + np.sqrt(1.0 / 3.0) / 2.0,
+        1.0,
+        1.2,
+    ]
+)
 ax.set_ylim(-0.2, 1.2)
-ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
+ax.set_yticks([-0.2, 0.5, 1.2])
 plt.show()
 
 # %%
@@ -150,9 +159,19 @@ ax.plot(
 )
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
-ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
+ax.set_xticks(
+    [
+        -0.2,
+        0.0,
+        0.5 - np.sqrt(3.0 / 5.0) / 2.0,
+        0.5,
+        0.5 + np.sqrt(3.0 / 5.0) / 2.0,
+        1.0,
+        1.2,
+    ]
+)
 ax.set_ylim(-0.2, 1.2)
-ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
+ax.set_yticks([-0.2, 1.2])
 plt.show()
 
 # %%
@@ -178,35 +197,25 @@ ax.plot(
 )
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
-ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
-ax.set_ylim(-0.2, 1.2)
-ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
-plt.show()
-
-# %%
-im = gf.Integ("IM_QUAD(3)")
-print("im")
-print(im)
-print("im.pts()")
-print(im.pts())
-print("im.coeffs()")
-print(im.coeffs())
-
-# %%
-pts = im.pts()
-fig = plt.figure()
-ax = fig.add_subplot(111)
-ax.plot(
-    pts[0],
-    pts[1],
-    marker="o",
-    markersize=10,
-    markeredgecolor="red",
-    markerfacecolor="red",
+ax.set_xticks(
+    [
+        -0.2,
+        0.0,
+        0.5 - np.sqrt(1.0 / 3.0) / 2.0,
+        0.5 + np.sqrt(1.0 / 3.0) / 2.0,
+        1.0,
+        1.2,
+    ]
 )
-ax.grid()
-ax.set_xlim(-0.2, 1.2)
-ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
 ax.set_ylim(-0.2, 1.2)
-ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
+ax.set_yticks(
+    [
+        -0.2,
+        0.0,
+        0.5 - np.sqrt(1.0 / 3.0) / 2.0,
+        0.5 + np.sqrt(1.0 / 3.0) / 2.0,
+        1.0,
+        1.2,
+    ]
+)
 plt.show()
