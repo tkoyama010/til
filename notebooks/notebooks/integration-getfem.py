@@ -86,13 +86,15 @@ fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.plot(
     pts[0],
-    pts[0] * 0.0,
+    pts[0] * 0.0 + 0.5,
     marker="o",
     markersize=20,
     markeredgecolor="red",
     markerfacecolor="red",
 )
 ax.grid()
+ax.set_xlim(-0.2, 1.2)
+ax.set_ylim(-0.2, 1.2)
 plt.show()
 
 # %%
@@ -110,13 +112,15 @@ fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.plot(
     pts[0],
-    pts[0] * 0.0,
+    pts[0] * 0.0 + 0.5,
     marker="o",
     markersize=20,
     markeredgecolor="red",
     markerfacecolor="red",
 )
 ax.grid()
+ax.set_xlim(-0.2, 1.2)
+ax.set_ylim(-0.2, 1.2)
 plt.show()
 
 # %%
@@ -134,13 +138,15 @@ fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.plot(
     pts[0],
-    pts[0] * 0.0,
+    pts[0] * 0.0 + 0.5,
     marker="o",
     markersize=20,
     markeredgecolor="red",
     markerfacecolor="red",
 )
 ax.grid()
+ax.set_xlim(-0.2, 1.2)
+ax.set_ylim(-0.2, 1.2)
 plt.show()
 
 # %%
@@ -165,6 +171,8 @@ ax.plot(
     markerfacecolor="red",
 )
 ax.grid()
+ax.set_xlim(-0.2, 1.2)
+ax.set_ylim(-0.2, 1.2)
 plt.show()
 
 # %%
@@ -189,4 +197,6 @@ ax.plot(
     markerfacecolor="red",
 )
 ax.grid()
+ax.set_xlim(-0.2, 1.2)
+ax.set_ylim(-0.2, 1.2)
 plt.show()
