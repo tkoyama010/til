@@ -48,6 +48,9 @@ pv.set_jupyter_backend("panel")
 mesh.export_to_vtk("mesh.vtk", "ascii")
 m = pv.read("mesh.vtk")
 
-plotter = pyvista.Plotter()
+plotter = pv.Plotter()
 plotter.add_mesh(m)
+plotter.add_mesh(
+    pv.PolyData(m.points), color="red", point_size=10, render_points_as_spheres=True
+)
 plotter.show(cpos="xy")
