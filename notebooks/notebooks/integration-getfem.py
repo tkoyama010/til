@@ -82,7 +82,9 @@ print(im.coeffs())
 
 # %%
 pts = im.pts()
-plt.plot(
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(
     pts[0],
     pts[0] * 0.0,
     marker="o",
@@ -113,6 +115,7 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+plt.show()
 
 # %%
 im = gf.Integ("IM_GAUSS1D(5)")
@@ -135,6 +138,7 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+plt.show()
 
 # %%
 im = gf.Integ("IM_PRODUCT(IM_GAUSS1D(3), IM_GAUSS1D(3))")
@@ -157,6 +161,7 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+plt.show()
 
 # %%
 im = gf.Integ("IM_QUAD(3)")
@@ -179,3 +184,4 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+plt.show()
