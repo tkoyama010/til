@@ -92,6 +92,7 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+ax.grid()
 plt.show()
 
 # %%
@@ -115,6 +116,7 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+ax.grid()
 plt.show()
 
 # %%
@@ -138,6 +140,7 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+ax.grid()
 plt.show()
 
 # %%
@@ -161,6 +164,7 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+ax.grid()
 plt.show()
 
 # %%
@@ -184,4 +188,5 @@ ax.plot(
     markeredgecolor="red",
     markerfacecolor="red",
 )
+ax.grid()
 plt.show()
