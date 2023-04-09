@@ -19,5 +19,7 @@ dependencies:
   - seaborn==0.12.2
   - sphinx==4.5.0
   - sphinx-book-theme==1.0.0
-  - sphinx==4.5.0
+  - pip==23.0.1
+  - pip:
+    - sphinxcontrib-tikz==0.4.16
   - statsmodels==0.13.5
