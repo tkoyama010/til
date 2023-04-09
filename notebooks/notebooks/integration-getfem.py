@@ -72,22 +72,36 @@ print([(1.0 - np.sqrt(1.0 / 3.0)) / 2.0, (1.0 + np.sqrt(1.0 / 3.0)) / 2.0])
 
 # %%
 im = gf.Integ("IM_GAUSS1D(1)")
+print("im")
 print(im)
+print("im.pts()")
 print(im.pts())
+print("im.coeffs()")
+print(im.coeffs())
 
 # %%
 im = gf.Integ("IM_GAUSS1D(3)")
+print("im")
 print(im)
+print("im.pts()")
 print(im.pts())
+print("im.coeffs()")
+print(im.coeffs())
 
 # %%
 im = gf.Integ("IM_GAUSS1D(5)")
+print("im")
 print(im)
+print("im.pts()")
 print(im.pts())
+print("im.coeffs()")
+print(im.coeffs())
 
 # %%
 im = gf.Integ("IM_PRODUCT(IM_GAUSS1D(3), IM_GAUSS1D(3))")
+print("im")
 print(im)
+print("im.pts()")
 print(im.pts())
-print("im.face_pts(0):", im.face_pts(0))
-print("im.face_pts(1):", im.face_pts(1))
+print("im.coeffs()")
+print(im.coeffs())
