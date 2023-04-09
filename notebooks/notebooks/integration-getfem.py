@@ -80,6 +80,20 @@ print("im.coeffs()")
 print(im.coeffs())
 
 # %%
+import matplotlib.pyplot as plt
+
+pts = im.pts()
+plt.plot(
+    pts[0],
+    pts[0] * 0.0,
+    marker="o",
+    markersize=20,
+    markeredgecolor="red",
+    markerfacecolor="red",
+)
+plt.show()
+
+# %%
 im = gf.Integ("IM_GAUSS1D(3)")
 print("im")
 print(im)
@@ -87,6 +101,20 @@ print("im.pts()")
 print(im.pts())
 print("im.coeffs()")
 print(im.coeffs())
+
+# %%
+import matplotlib.pyplot as plt
+
+pts = im.pts()
+plt.plot(
+    pts[0],
+    pts[0] * 0.0,
+    marker="o",
+    markersize=20,
+    markeredgecolor="red",
+    markerfacecolor="red",
+)
+plt.show()
 
 # %%
 im = gf.Integ("IM_GAUSS1D(5)")
@@ -98,6 +126,20 @@ print("im.coeffs()")
 print(im.coeffs())
 
 # %%
+import matplotlib.pyplot as plt
+
+pts = im.pts()
+plt.plot(
+    pts[0],
+    pts[0] * 0.0,
+    marker="o",
+    markersize=20,
+    markeredgecolor="red",
+    markerfacecolor="red",
+)
+plt.show()
+
+# %%
 im = gf.Integ("IM_PRODUCT(IM_GAUSS1D(3), IM_GAUSS1D(3))")
 print("im")
 print(im)
@@ -107,6 +149,20 @@ print("im.coeffs()")
 print(im.coeffs())
 
 # %%
+import matplotlib.pyplot as plt
+
+pts = im.pts()
+plt.plot(
+    pts[0],
+    pts[1],
+    marker="o",
+    markersize=20,
+    markeredgecolor="red",
+    markerfacecolor="red",
+)
+plt.show()
+
+# %%
 im = gf.Integ("IM_QUAD(3)")
 print("im")
 print(im)
@@ -114,3 +170,17 @@ print("im.pts()")
 print(im.pts())
 print("im.coeffs()")
 print(im.coeffs())
+
+# %%
+import matplotlib.pyplot as plt
+
+pts = im.pts()
+plt.plot(
+    pts[0],
+    pts[1],
+    marker="o",
+    markersize=20,
+    markeredgecolor="red",
+    markerfacecolor="red",
+)
+plt.show()
