@@ -94,7 +94,9 @@ ax.plot(
 )
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
+ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
 ax.set_ylim(-0.2, 1.2)
+ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
 plt.show()
 
 # %%
@@ -120,7 +122,9 @@ ax.plot(
 )
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
+ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
 ax.set_ylim(-0.2, 1.2)
+ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
 plt.show()
 
 # %%
@@ -146,7 +150,9 @@ ax.plot(
 )
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
+ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
 ax.set_ylim(-0.2, 1.2)
+ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
 plt.show()
 
 # %%
@@ -172,7 +178,9 @@ ax.plot(
 )
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
+ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
 ax.set_ylim(-0.2, 1.2)
+ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
 plt.show()
 
 # %%
@@ -198,5 +206,7 @@ ax.plot(
 )
 ax.grid()
 ax.set_xlim(-0.2, 1.2)
+ax.set_xticks([-0.2, 0.0, 1.0, 1.2])
 ax.set_ylim(-0.2, 1.2)
+ax.set_yticks([-0.2, 0.0, 1.0, 1.2])
 plt.show()
