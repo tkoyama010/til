@@ -32,55 +32,9 @@ import matplotlib.pyplot as plt
 # したがって，これは積分法を定義するためには必須です．
 # もちろん，積分法の次数は，選択された有限要素法に好都合な積分を行うため，十分に選定しなければなりません．
 
-# %%
-im = gf.Integ("IM_GAUSS1D(1)")
-print("im")
-print(im)
-print("im.pts()")
-print(im.pts())
-print("im.coeffs()")
-print(im.coeffs())
-
-# %%
-pts = im.pts()
-coeffs = im.coeffs()
-fig = plt.figure()
-ax = fig.add_subplot(111)
-ax.plot([0.0, 1.0], [0.5, 0.5], color="black", linewidth=2)
-ax.plot(
-    pts[0],
-    pts[0] * 0.0 + 0.5,
-    linewidth=0,
-    marker="o",
-    markersize=10,
-    markeredgecolor="red",
-    markerfacecolor="red",
-)
-for x, coeff in zip(pts[0], coeffs):
-    label = "{:.3f}".format(coeff)
-    ax.annotate(label, (x, 0.5), xytext=(0.0, 10.0), textcoords="offset points")
-ax.grid()
-ax.set_xlim(-0.2, 1.2)
-ax.set_xticks([-0.2, 0.0, 0.5, 1.0, 1.2])
-ax.set_xticklabels(
-    [
-        "",
-        r"$0$",
-        r"$\dfrac{1}{2}$",
-        r"$1$",
-        "",
-    ]
-)
-ax.set_ylim(-0.2, 1.2)
-ax.set_yticks([-0.2, 0.5, 1.2])
-ax.set_yticklabels(
-    [
-        "",
-        "",
-        "",
-    ]
-)
-plt.show()
+# %% [markdown]
+# ## 1次元のGauss積分法
+# `K` 次（ `K/2+1` 点）のGauss-Legendreは， "IM_GAUSS1D(K)" と表記します．
 
 # %%
 im = gf.Integ("IM_GAUSS1D(3)")
@@ -142,67 +96,9 @@ ax.set_yticklabels(
 )
 plt.show()
 
-# %%
-im = gf.Integ("IM_GAUSS1D(5)")
-print("im")
-print(im)
-print("im.pts()")
-print(im.pts())
-print("im.coeffs()")
-print(im.coeffs())
-
-# %%
-pts = im.pts()
-coeffs = im.coeffs()
-fig = plt.figure()
-ax = fig.add_subplot(111)
-ax.plot([0.0, 1.0], [0.5, 0.5], color="black", linewidth=2)
-ax.plot(
-    pts[0],
-    pts[0] * 0.0 + 0.5,
-    linewidth=0,
-    marker="o",
-    markersize=10,
-    markeredgecolor="red",
-    markerfacecolor="red",
-)
-for x, coeff in zip(pts[0], coeffs):
-    label = "{:.3f}".format(coeff)
-    ax.annotate(label, (x, 0.5), xytext=(0.0, 10.0), textcoords="offset points")
-ax.grid()
-ax.set_xlim(-0.2, 1.2)
-ax.set_xticks(
-    [
-        -0.2,
-        0.0,
-        0.5 - np.sqrt(3.0 / 5.0) / 2.0,
-        0.5,
-        0.5 + np.sqrt(3.0 / 5.0) / 2.0,
-        1.0,
-        1.2,
-    ]
-)
-ax.set_xticklabels(
-    [
-        "",
-        r"$0$",
-        r"$\dfrac{1}{2}\left(1 - \sqrt{\dfrac{3}{5}}\right)$",
-        r"$\dfrac{1}{2}$",
-        r"$\dfrac{1}{2}\left(1 + \sqrt{\dfrac{3}{5}}\right)$",
-        r"$1$",
-        "",
-    ]
-)
-ax.set_ylim(-0.2, 1.2)
-ax.set_yticks([-0.2, 0.5, 1.2])
-ax.set_yticklabels(
-    [
-        "",
-        "",
-        "",
-    ]
-)
-plt.show()
+# %% [markdown]
+# ## 積分法の直積
+# `"IM_PRODUCT(IM1, IM2)"` を使って，4辺形やプリズムの積分法を作ることができます．
 
 # %%
 im = gf.Integ("IM_PRODUCT(IM_GAUSS1D(3), IM_GAUSS1D(3))")
