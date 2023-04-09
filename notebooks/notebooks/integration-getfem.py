@@ -23,7 +23,6 @@
 # %%
 import getfem as gf
 import numpy as np
-from icecream import ic
 
 # %% [markdown]
 # ## メッシュ生成
@@ -69,13 +68,19 @@ plotter.show(cpos="xy")
 # もちろん，積分法の次数は，選択された有限要素法に好都合な積分を行うため，十分に選定しなければなりません．
 
 # %%
-ic([-np.sqrt(1.0 / 3.0), np.sqrt(1.0 / 3.0)])
+print([(1.0 - np.sqrt(1.0 / 3.0)) / 2.0, (1.0 + np.sqrt(1.0 / 3.0)) / 2.0])
+
+# %%
 im = gf.Integ("IM_GAUSS1D(1)")
-ic(im)
-ic(im.pts())
+print(im)
+print(im.pts())
+
+# %%
 im = gf.Integ("IM_GAUSS1D(3)")
-ic(im)
-ic(im.pts())
+print(im)
+print(im.pts())
+
+# %%
 im = gf.Integ("IM_GAUSS1D(5)")
-ic(im)
-ic(im.pts())
+print(im)
+print(im.pts())
