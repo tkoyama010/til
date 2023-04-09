@@ -45,6 +45,7 @@ print(im.coeffs())
 pts = im.pts()
 fig = plt.figure()
 ax = fig.add_subplot(111)
+ax.plot([0.0, 1.0], [0.5, 0.5], color="black", linewidth=2)
 ax.plot(
     pts[0],
     pts[0] * 0.0 + 0.5,
@@ -74,6 +75,7 @@ print(im.coeffs())
 pts = im.pts()
 fig = plt.figure()
 ax = fig.add_subplot(111)
+ax.plot([0.0, 1.0], [0.5, 0.5], color="black", linewidth=2)
 ax.plot(
     pts[0],
     pts[0] * 0.0 + 0.5,
@@ -112,6 +114,7 @@ print(im.coeffs())
 pts = im.pts()
 fig = plt.figure()
 ax = fig.add_subplot(111)
+ax.plot([0.0, 1.0], [0.5, 0.5], color="black", linewidth=2)
 ax.plot(
     pts[0],
     pts[0] * 0.0 + 0.5,
@@ -151,6 +154,9 @@ print(im.coeffs())
 pts = im.pts()
 fig = plt.figure()
 ax = fig.add_subplot(111)
+ax.plot(
+    [0.0, 1.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 1.0, 0.0], color="black", linewidth=2
+)
 ax.plot(
     pts[0],
     pts[1],
