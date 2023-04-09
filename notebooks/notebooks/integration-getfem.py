@@ -15,5 +15,20 @@
 #
 # このノートではGetFEMの積分点を確認します。
 
+# %% [markdown]
+# ## 初期化
+#
+# GetFEM と NumPy をグローバルにインポートします。
+
 # %%
 import getfem as gf
+import numpy as np
+
+# %% [markdown]
+# ## メッシュ生成
+# GetFEM には，ここで説明するいくつかの制約のあるメッシュ機能があります．
+# ここではそれらを使用するつもりです．
+
+# %%
+mesh = gf.Mesh("cartesian", [0.0, 1.0])
+print(mesh)
