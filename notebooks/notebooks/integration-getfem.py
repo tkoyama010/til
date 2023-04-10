@@ -241,7 +241,10 @@ print("A4:", A4)
 
 # %%
 mesh = gf.Mesh("empty", 2)
-mesh.add_convex(gf.GeoTrans(gf.GeoTrans("GT_QK(2,1)")), [[-1.0, 1.0, -1.0, 1.0], [-1.0, -1.0, 1.0, 1.0]])
+mesh.add_convex(
+    gf.GeoTrans(gf.GeoTrans("GT_QK(2,1)")),
+    [[-1.0, 1.0, -1.0, 1.0], [-1.0, -1.0, 1.0, 1.0]],
+)
 mfu = gf.MeshFem(mesh, 1)
 mfd = gf.MeshFem(mesh, 1)
 mfu.set_fem(mfu.set_fem(gf.Fem("FEM_PRODUCT(FEM_PK(1, 1), FEM_PK(1, 1))")))
