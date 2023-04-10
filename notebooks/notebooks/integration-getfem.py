@@ -69,8 +69,8 @@ ax.set_xticks(
     [
         -0.2,
         0.0,
-        0.5 - np.sqrt(1.0 / 3.0) / 2.0,
-        0.5 + np.sqrt(1.0 / 3.0) / 2.0,
+        1.0 / 2.0 * (1.0 - np.sqrt(3.0 )/ 3.0),
+        1.0 / 2.0 * (1.0 + np.sqrt(3.0 )/ 3.0),
         1.0,
         1.2,
     ]
@@ -79,8 +79,8 @@ ax.set_xticklabels(
     [
         "",
         r"$0$",
-        r"$\dfrac{1}{2}\left(1 - \sqrt{\dfrac{1}{3}}\right)$",
-        r"$\dfrac{1}{2}\left(1 + \sqrt{\dfrac{1}{3}}\right)$",
+        r"$\dfrac{1}{2}\left(1 - \dfrac{\sqrt{3}}{3}\right)$",
+        r"$\dfrac{1}{2}\left(1 + \dfrac{\sqrt{3}}{3}\right)$",
         r"$1$",
         "",
     ]
@@ -135,8 +135,8 @@ ax.set_xticks(
     [
         -0.2,
         0.0,
-        0.5 - np.sqrt(1.0 / 3.0) / 2.0,
-        0.5 + np.sqrt(1.0 / 3.0) / 2.0,
+        1.0 / 2.0 * (1.0 - np.sqrt(3.0 )/ 3.0),
+        1.0 / 2.0 * (1.0 + np.sqrt(3.0 )/ 3.0),
         1.0,
         1.2,
     ]
@@ -145,8 +145,8 @@ ax.set_xticklabels(
     [
         "",
         r"$0$",
-        r"$\dfrac{1}{2}\left(1 - \sqrt{\dfrac{1}{3}}\right)$",
-        r"$\dfrac{1}{2}\left(1 + \sqrt{\dfrac{1}{3}}\right)$",
+        r"$\dfrac{1}{2}\left(1 - \dfrac{\sqrt{3}}{3}\right)$",
+        r"$\dfrac{1}{2}\left(1 + \dfrac{\sqrt{3}}{3}\right)$",
         r"$1$",
         "",
     ]
@@ -156,8 +156,8 @@ ax.set_yticks(
     [
         -0.2,
         0.0,
-        0.5 - np.sqrt(1.0 / 3.0) / 2.0,
-        0.5 + np.sqrt(1.0 / 3.0) / 2.0,
+        1.0 / 2.0 * (1.0 - np.sqrt(3.0 )/ 3.0),
+        1.0 / 2.0 * (1.0 + np.sqrt(3.0 )/ 3.0),
         1.0,
         1.2,
     ]
@@ -166,8 +166,8 @@ ax.set_yticklabels(
     [
         "",
         r"$0$",
-        r"$\dfrac{1}{2}\left(1 - \sqrt{\dfrac{1}{3}}\right)$",
-        r"$\dfrac{1}{2}\left(1 + \sqrt{\dfrac{1}{3}}\right)$",
+        r"$\dfrac{1}{2}\left(1 - \dfrac{\sqrt{3}}{3}\right)$",
+        r"$\dfrac{1}{2}\left(1 + \dfrac{\sqrt{3}}{3}\right)$",
         r"$1$",
         "",
     ]
