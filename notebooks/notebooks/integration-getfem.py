@@ -183,19 +183,19 @@ plt.show()
 
 # %%
 def N1(epsilon, eta):
-    1.0 / 2.0 * (1.0 - epsilon) * (1.0 - eta)
+    return 1.0 / 2.0 * (1.0 - epsilon) * (1.0 - eta)
 
 
 def N2(epsilon, eta):
-    1.0 / 2.0 * (1.0 + epsilon) * (1.0 - eta)
+    return 1.0 / 2.0 * (1.0 + epsilon) * (1.0 - eta)
 
 
 def N3(epsilon, eta):
-    1.0 / 2.0 * (1.0 + epsilon) * (1.0 + eta)
+    return 1.0 / 2.0 * (1.0 + epsilon) * (1.0 + eta)
 
 
 def N4(epsilon, eta):
-    1.0 / 2.0 * (1.0 - epsilon) * (1.0 + eta)
+    return 1.0 / 2.0 * (1.0 - epsilon) * (1.0 + eta)
 
 
 # %% [markdown]
