@@ -173,3 +173,38 @@ ax.set_yticklabels(
     ]
 )
 plt.show()
+
+# %% [markdown]
+# ## 検算
+#
+# isoparametric座標と全体座標が一致する場合に負担面積が適切に計算されるか確認を行います。
+# まず、節点1から節点4の形状関数を定義します。
+
+# %% 
+def N1(epsilon, eta):
+    1.0 / 2.0 * (1.0 - epsilon) * (1.0 - eta)
+
+
+def N2(epsilon, eta):
+    1.0 / 2.0 * (1.0 + epsilon) * (1.0 - eta)
+
+
+def N3(epsilon, eta):
+    1.0 / 2.0 * (1.0 + epsilon) * (1.0 + eta)
+
+
+def N4(epsilon, eta):
+    1.0 / 2.0 * (1.0 - epsilon) * (1.0 + eta)
+
+# %% [markdown]
+# それぞれの形状関数から負担面積はGauss積分により以下の通り計算されます。
+
+# %%
+A1 = np.sum([1.0 * N1(-np.sqrt(3)/3, -np.sqrt(3)/3), 1.0 * N1(-np.sqrt(3)/3, np.sqrt(3)/3), 1.0 * N1(np.sqrt(3)/3, -np.sqrt(3)/3), 1.0 * N1(np.sqrt(3)/3, np.sqrt(3)/3)])
+A2 = np.sum([1.0 * N2(-np.sqrt(3)/3, -np.sqrt(3)/3), 1.0 * N2(-np.sqrt(3)/3, np.sqrt(3)/3), 1.0 * N2(np.sqrt(3)/3, -np.sqrt(3)/3), 1.0 * N2(np.sqrt(3)/3, np.sqrt(3)/3)])
+A3 = np.sum([1.0 * N3(-np.sqrt(3)/3, -np.sqrt(3)/3), 1.0 * N3(-np.sqrt(3)/3, np.sqrt(3)/3), 1.0 * N3(np.sqrt(3)/3, -np.sqrt(3)/3), 1.0 * N3(np.sqrt(3)/3, np.sqrt(3)/3)])
+A4 = np.sum([1.0 * N4(-np.sqrt(3)/3, -np.sqrt(3)/3), 1.0 * N4(-np.sqrt(3)/3, np.sqrt(3)/3), 1.0 * N4(np.sqrt(3)/3, -np.sqrt(3)/3), 1.0 * N4(np.sqrt(3)/3, np.sqrt(3)/3)])
+print("A1:", A1)
+print("A2:", A2)
+print("A3:", A3)
+print("A4:", A4)
