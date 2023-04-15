@@ -1,3 +1,4 @@
+# %% [code] {"jupyter":{"outputs_hidden":false}}
 # ---
 # jupyter:
 #   jupytext:
@@ -10,7 +11,7 @@
 #       jupytext_version: 1.14.5
 # ---
 
-# %%
+# %% [code] {"jupyter":{"outputs_hidden":false}}
 # https://github.com/matplotlib/matplotlib/issues/5836#issuecomment-179592427
 import warnings
 
@@ -18,18 +19,23 @@ with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import matplotlib.pyplot as plt
 
+!conda config --add channels conda-forge
+!conda config --set channel_priority strict
+!yes | mamba install getfem > log.txt    
+!pip install pyvista
+
 # %% [markdown]
 # # GetFEMによる丸棒のねじり解析
-#
-#
+# 
+# 
 # 半径方向の単位ベクトル $P$ は以下の式であらわされます．
-#
+# 
 # $$
 # P＝\begin{pmatrix}\cos \theta &\sin \theta \end{pmatrix}
 # $$
-#
+# 
 # ベクトル $P$ を角度 $\theta$ で微分すると接線方向の単位ベクトルを得ることができます．
-#
+# 
 # $$
 # \frac{dP}{d\theta }=\begin{pmatrix}-\sin \theta &\cos \theta \end{pmatrix}
 # $$
@@ -38,18 +44,19 @@ with warnings.catch_warnings():
 # ```{tikz}
 # :include: torsion-getfem.tikz
 # ```
+# ![torsion-getfem.tikz](https://tkoyama010-notebooks--43.org.readthedocs.build/ja/43/_images/tikz-9f57e75ffb45fd5f55aba90909a383e1bb73b131.png "torsion-getfem.tikz")
 
 # %% [markdown]
 # ## モデルのパラメータ
 # ここで，問題のさまざまな物理パラメータおよび数値パラメータを定義しましょう．
 
-# %%
+# %% [code] {"jupyter":{"outputs_hidden":false}}
 elements_degree = 1
 
 # %% [markdown]
 # ## メッシュ生成
 
-# %%
+# %% [code] {"jupyter":{"outputs_hidden":false}}
 import getfem as gf
 import numpy as np
 import pyvista as pv
@@ -130,13 +137,13 @@ for z_a, z_b in zip(z_as, z_bs):
 
 # %% [markdown]
 # ## 境界の選択
-#
+# 
 # 境界のそれぞれの部分には異なる境界条件を設定するため，境界のさまざまな部分には番号を付けます．
 # したがって，メッシュ上の要素面を選択し，メッシュ領域を定義する必要があります．
 # 1, 2はそれぞれ上境界，下境界です．
 # これらの境界番号は，モデルのブリックで使用されます．
 
-# %%
+# %% [code] {"jupyter":{"outputs_hidden":false}}
 
 fb1 = mesh.outer_faces_with_direction([0.0, 0.0, 1.0], 0.01)
 fb2 = mesh.outer_faces_with_direction([0.0, 0.0, -1.0], 0.01)
@@ -149,12 +156,11 @@ mesh.set_region(BOTTOM_BOUND, fb2)
 
 # %% [markdown]
 # ## メッシュの描画
-#
+# #
 # メッシュをプレビューし，その妥当性を制御するために，次の手順を使用します．
 # 外部グラフィカルポストプロセッサPyVistaを使用する必要があります．
 
-# %%
-
+# %% [code] {"jupyter":{"outputs_hidden":false}}
 mesh.export_to_vtk("mesh.vtk", "ascii")
 import pyvista as pv
 
@@ -168,16 +174,43 @@ plotter.add_mesh(m, show_edges=True)
 plotter.show(cpos="yz")
 
 # %% [markdown]
-# ```{Tip}
+# ```{Tip}``
 # 上に示したジオメトリはインタラクティブです。
 # ```
 
 # %% [markdown]
 # ## 有限要素法と積分法の定義
-# 有限要素法を定義します．変位フィールドを近似する最初の1つは，変位フィールドを近似する mfu です．
+# 有限要素法を定義します．変位フィールドを近似する最初の1つは，変位フィールドを近似する `mfu` です．
 # これはベクトルフィールドでPythonでは次のように定義されます．
 
-# %%
-
+# %% [code] {"jupyter":{"outputs_hidden":false}}
 mfu = gf.MeshFem(mesh, 2)
 mfu.set_classical_fem(elements_degree)
+
+# %% [markdown]
+# ここで， `2` はベクトル場の次元を表します．2行目は，使用する有限要素を設定します．
+# `classical_finite_element` は，連続したLagrange要素を意味し， `elements_degree` は `2` に設定されています．
+# これは2次の (アイソパラメトリック) 要素を使用することを意味します．
+# GetFEM では，既存の有限要素法を幅広く選択肢できます．
+# [付録A.有限要素法リスト](https://getfem.readthedocs.io/ja/latest/userdoc/appendixA.html#ud-appendixa) を参照してください．
+# しかし，実際には Lagrange 有限要素法が最も使用されています．
+
+# %% [markdown]
+# 次に定義するのは，積分法 `mim` です． *GetFEM* にデフォルトの積分法はありません．
+# したがって，これは積分法を定義するためには必須です．
+# もちろん，積分法の次数は，選択された有限要素法に好都合な積分を行うため，十分に選定しなければなりません．
+# ここでは，完全積分を選択します。
+
+# %% [code] {"jupyter":{"outputs_hidden":false}}
+mim = gf.MeshIm(
+    mesh,
+    gf.Integ(
+        "IM_PRODUCT(IM_GAUSS1D("
+        + str(elements_degree + 2)
+        + "), IM_GAUSS1D("
+        + str(elements_degree + 2)
+        + "))"
+    ),
+)
+
+# %% [code]
