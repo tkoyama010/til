@@ -10,3 +10,4 @@ chapters:
 - file: notebooks/hello-pyvista
 - file: notebooks/hello-tikz
 - file: notebooks/integration-getfem
+- file: notebooks/tlvmc-parkinsons-freezing-gait-prediction
