@@ -19,10 +19,11 @@ with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import matplotlib.pyplot as plt
 
-!conda config --add channels conda-forge
-!conda config --set channel_priority strict
-!yes | mamba install getfem > log.txt
-!pip install pyvista
+# %% [code]
+# !conda config --add channels conda-forge
+# !conda config --set channel_priority strict
+# !yes | mamba install getfem > log.txt
+# !pip install pyvista
 
 # %% [markdown]
 # # GetFEMによる丸棒のねじり解析
