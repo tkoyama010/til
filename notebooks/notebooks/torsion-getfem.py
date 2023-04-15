@@ -1,4 +1,4 @@
-# %% [code] {"jupyter":{"outputs_hidden":false}}
+# %% [code]
 # ---
 # jupyter:
 #   jupytext:
@@ -11,7 +11,7 @@
 #       jupytext_version: 1.14.5
 # ---
 
-# %% [code] {"jupyter":{"outputs_hidden":false}}
+# %% [code]
 # https://github.com/matplotlib/matplotlib/issues/5836#issuecomment-179592427
 import warnings
 
@@ -50,13 +50,13 @@ with warnings.catch_warnings():
 # ## モデルのパラメータ
 # ここで，問題のさまざまな物理パラメータおよび数値パラメータを定義しましょう．
 
-# %% [code] {"jupyter":{"outputs_hidden":false}}
+# %% [code]
 elements_degree = 1
 
 # %% [markdown]
 # ## メッシュ生成
 
-# %% [code] {"jupyter":{"outputs_hidden":false}}
+# %% [code]
 import getfem as gf
 import numpy as np
 import pyvista as pv
@@ -143,7 +143,7 @@ for z_a, z_b in zip(z_as, z_bs):
 # 1, 2はそれぞれ上境界，下境界です．
 # これらの境界番号は，モデルのブリックで使用されます．
 
-# %% [code] {"jupyter":{"outputs_hidden":false}}
+# %% [code]
 
 fb1 = mesh.outer_faces_with_direction([0.0, 0.0, 1.0], 0.01)
 fb2 = mesh.outer_faces_with_direction([0.0, 0.0, -1.0], 0.01)
@@ -160,7 +160,7 @@ mesh.set_region(BOTTOM_BOUND, fb2)
 # メッシュをプレビューし，その妥当性を制御するために，次の手順を使用します．
 # 外部グラフィカルポストプロセッサPyVistaを使用する必要があります．
 
-# %% [code] {"jupyter":{"outputs_hidden":false}}
+# %% [code]
 mesh.export_to_vtk("mesh.vtk", "ascii")
 import pyvista as pv
 
@@ -183,7 +183,7 @@ plotter.show(cpos="yz")
 # 有限要素法を定義します．変位フィールドを近似する最初の1つは，変位フィールドを近似する `mfu` です．
 # これはベクトルフィールドでPythonでは次のように定義されます．
 
-# %% [code] {"jupyter":{"outputs_hidden":false}}
+# %% [code]
 mfu = gf.MeshFem(mesh, 2)
 mfu.set_classical_fem(elements_degree)
 
@@ -201,7 +201,7 @@ mfu.set_classical_fem(elements_degree)
 # もちろん，積分法の次数は，選択された有限要素法に好都合な積分を行うため，十分に選定しなければなりません．
 # ここでは，完全積分を選択します。
 
-# %% [code] {"jupyter":{"outputs_hidden":false}}
+# %% [code]
 mim = gf.MeshIm(
     mesh,
     gf.Integ(
