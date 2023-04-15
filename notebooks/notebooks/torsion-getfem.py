@@ -45,7 +45,6 @@ with warnings.catch_warnings():
 # ```{tikz}
 # :include: torsion-getfem.tikz
 # ```
-# ![torsion-getfem.tikz](https://tkoyama010-notebooks--43.org.readthedocs.build/ja/43/_images/tikz-9f57e75ffb45fd5f55aba90909a383e1bb73b131.png "torsion-getfem.tikz")
 
 # %% [markdown]
 # ## モデルのパラメータ
