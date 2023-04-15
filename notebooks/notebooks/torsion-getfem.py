@@ -21,21 +21,21 @@ with warnings.catch_warnings():
 
 !conda config --add channels conda-forge
 !conda config --set channel_priority strict
-!yes | mamba install getfem > log.txt    
+!yes | mamba install getfem > log.txt
 !pip install pyvista
 
 # %% [markdown]
 # # GetFEMによる丸棒のねじり解析
-# 
-# 
+#
+#
 # 半径方向の単位ベクトル $P$ は以下の式であらわされます．
-# 
+#
 # $$
 # P＝\begin{pmatrix}\cos \theta &\sin \theta \end{pmatrix}
 # $$
-# 
+#
 # ベクトル $P$ を角度 $\theta$ で微分すると接線方向の単位ベクトルを得ることができます．
-# 
+#
 # $$
 # \frac{dP}{d\theta }=\begin{pmatrix}-\sin \theta &\cos \theta \end{pmatrix}
 # $$
@@ -137,7 +137,7 @@ for z_a, z_b in zip(z_as, z_bs):
 
 # %% [markdown]
 # ## 境界の選択
-# 
+#
 # 境界のそれぞれの部分には異なる境界条件を設定するため，境界のさまざまな部分には番号を付けます．
 # したがって，メッシュ上の要素面を選択し，メッシュ領域を定義する必要があります．
 # 1, 2はそれぞれ上境界，下境界です．
