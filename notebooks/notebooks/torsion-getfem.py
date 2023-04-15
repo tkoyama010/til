@@ -19,12 +19,6 @@ with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import matplotlib.pyplot as plt
 
-# %% [code]
-# !conda config --add channels conda-forge
-# !conda config --set channel_priority strict
-# !yes | mamba install getfem > log.txt
-# !pip install pyvista
-
 # %% [markdown]
 # # GetFEMによる丸棒のねじり解析
 #
@@ -72,7 +66,7 @@ L = 0.500  # m
 
 mesh = gf.Mesh("empty", 3)
 
-rhos = np.linspace(0.0, d / 2, 8 + 1)
+rhos = np.linspace(0.0001, d / 2, 8 + 1)
 phis = np.linspace(0.0, 2.0 * np.pi, 16 + 1)
 zs = np.linspace(0.0, L, 25 + 1)
 
@@ -85,28 +79,6 @@ z_bs = zs[1:]
 
 for z_a, z_b in zip(z_as, z_bs):
     for phi_a, phi_b in zip(phi_as, phi_bs):
-        mesh.add_convex(
-            gf.GeoTrans("GT_PRISM(3,1)"),
-            [
-                [
-                    0,
-                    d / 16 * 1 * np.cos(phi_a),
-                    d / 16 * 1 * np.cos(phi_b),
-                    0,
-                    d / 16 * 1 * np.cos(phi_a),
-                    d / 16 * 1 * np.cos(phi_b),
-                ],
-                [
-                    0,
-                    d / 16 * 1 * np.sin(phi_a),
-                    d / 16 * 1 * np.sin(phi_b),
-                    0,
-                    d / 16 * 1 * np.sin(phi_a),
-                    d / 16 * 1 * np.sin(phi_b),
-                ],
-                [z_a, z_a, z_a, z_b, z_b, z_b],
-            ],
-        )
         for rho_a, rho_b in zip(rho_as, rho_bs):
             mesh.add_convex(
                 gf.GeoTrans("GT_QK(3,1)"),
@@ -165,7 +137,6 @@ mesh.export_to_vtk("mesh.vtk", "ascii")
 import pyvista as pv
 
 pv.set_plot_theme("document")
-pv.start_xvfb()
 pv.set_jupyter_backend("panel")
 
 m = pv.read("mesh.vtk")
@@ -205,9 +176,11 @@ mfu.set_classical_fem(elements_degree)
 mim = gf.MeshIm(
     mesh,
     gf.Integ(
-        "IM_PRODUCT(IM_GAUSS1D("
+        "IM_PRODUCT(IM_PRODUCT(IM_GAUSS1D("
         + str(elements_degree + 2)
         + "), IM_GAUSS1D("
+        + str(elements_degree + 2)
+        + ")), IM_GAUSS1D("
         + str(elements_degree + 2)
         + "))"
     ),
