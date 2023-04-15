@@ -20,4 +20,10 @@ with warnings.catch_warnings():
 
 # %% [markdown]
 # # Parkinson's Freezing of Gait Prediction
-# kaggle competitions download -c tlvmc-parkinsons-freezing-gait-prediction
+#
+# ## データの取得
+#
+# パーキンソン病の歩行の凍りつき予測データを取得します。
+
+# %%
+# !kaggle competitions download -c tlvmc-parkinsons-freezing-gait-prediction
