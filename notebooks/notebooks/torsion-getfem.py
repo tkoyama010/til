@@ -116,7 +116,7 @@ plotter.add_mesh(m, show_edges=True)
 plotter.show(cpos="yz")
 
 # %% [markdown]
-# ```{Tip}``
+# ```{tip}``
 # 上に示したジオメトリはインタラクティブです。
 # ```
 
