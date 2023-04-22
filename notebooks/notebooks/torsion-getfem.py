@@ -69,18 +69,70 @@ pv.set_jupyter_backend("panel")
 # GetFEMには円筒形のメッシュを作成する機能はありません．
 # その代わり立方体の規則的なメッシュを素早く作成する機能があるためそれを利用します．
 # NumPyの配列からX方向長さが円筒形の半径 $r$ ，Y方向長さが $2\pi$ のメッシュを作成します．
+# しかしながら，この方法ではポイントのマージがうまくいかず，断念せざるを得ませんでした．
 #
+
+# %% [code]
+# rhos = np.linspace(0.0001, d / 2, 8 + 1)
+# phis = np.linspace(0.0, 2.0 * np.pi, 16 + 1)
+# zs = np.linspace(L, 0.0, 25 + 1)
+# mesh = gf.Mesh("cartesian Q1", rhos, phis, zs)
+# pts = mesh.pts()
+# r = pts[0]
+# t = pts[1]
+# z = pts[2]
+# mesh.set_pts(np.array([r * np.cos(t), r * np.sin(t), z]))
+
+# %% [markdown]
+# そのため，メッシュをフルスクラッチで作成をしました．
 
 # %% [code]
 rhos = np.linspace(0.0001, d / 2, 8 + 1)
 phis = np.linspace(0.0, 2.0 * np.pi, 16 + 1)
 zs = np.linspace(L, 0.0, 25 + 1)
-mesh = gf.Mesh("cartesian Q1", rhos, phis, zs)
-pts = mesh.pts()
-r = pts[0]
-t = pts[1]
-z = pts[2]
-mesh.set_pts(np.array([r * np.cos(t), r * np.sin(t), z]))
+mesh = gf.Mesh("empty", 3)
+
+rho_as = rhos[:-1]
+rho_bs = rhos[1:]
+phi_as = phis[:-1]
+phi_bs = phis[1:]
+z_as = zs[:-1]
+z_bs = zs[1:]
+
+for z_a, z_b in zip(z_as, z_bs):
+    for phi_a, phi_b in zip(phi_as, phi_bs):
+        for rho_a, rho_b in zip(rho_as, rho_bs):
+            mesh.add_convex(
+                gf.GeoTrans("GT_QK(3,1)"),
+                [
+                    [
+                        rho_a * np.cos(phi_a),
+                        rho_a * np.cos(phi_b),
+                        rho_b * np.cos(phi_a),
+                        rho_b * np.cos(phi_b),
+                        rho_a * np.cos(phi_a),
+                        rho_a * np.cos(phi_b),
+                        rho_b * np.cos(phi_a),
+                        rho_b * np.cos(phi_b),
+                    ],
+                    [
+                        rho_a * np.sin(phi_a),
+                        rho_a * np.sin(phi_b),
+                        rho_b * np.sin(phi_a),
+                        rho_b * np.sin(phi_b),
+                        rho_a * np.sin(phi_a),
+                        rho_a * np.sin(phi_b),
+                        rho_b * np.sin(phi_a),
+                        rho_b * np.sin(phi_b),
+                    ],
+                    [z_a, z_a, z_a, z_a, z_b, z_b, z_b, z_b],
+                ],
+            )
+
+# %% [markdown]
+# ```{tip}
+# 節点数と要素数を確認すること．
+# ```
 
 # %% [markdown]
 # ## 境界の選択
@@ -116,8 +168,8 @@ plotter.add_mesh(m, show_edges=True)
 plotter.show(cpos="yz")
 
 # %% [markdown]
-# ```{Tip}``
-# 上に示したジオメトリはインタラクティブです。
+# ```{tip}
+# 上に示したジオメトリはインタラクティブです．
 # ```
 
 # %% [markdown]
