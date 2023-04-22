@@ -46,9 +46,14 @@ with warnings.catch_warnings():
 
 # %% [code]
 elements_degree = 1
+d = 0.100  # m
+L = 0.500  # m
 
 # %% [markdown]
-# ## メッシュ生成
+# ## 初期化
+# 
+# Python の場合，これは簡単です． 
+# GetFEM をグローバルにインポートするだけです(numpy と pyvista もインポートする必要があります)．
 
 # %% [code]
 import getfem as gf
@@ -58,57 +63,19 @@ import pyvista as pv
 pv.start_xvfb()
 pv.set_jupyter_backend("panel")
 
-###############################################################################
-# Numerical parameters
+# %% [markdown]
+# ## メッシュ生成
+#
+# GetFEMには円筒形のメッシュを作成する機能はありません．
+# その代わり立方体の規則的なメッシュを素早く作成する機能があるためそれを利用します．
+# NumPyの配列からX方向長さが $2\pi$ ，Y方向長さが円筒形の半径 $r$ のメッシュを作成します．
+# 
 
-d = 0.100  # m
-L = 0.500  # m
-
-###############################################################################
-# Mesh generation.
-
-mesh = gf.Mesh("empty", 3)
-
+# %% [code]
 rhos = np.linspace(0.0001, d / 2, 8 + 1)
 phis = np.linspace(0.0, 2.0 * np.pi, 16 + 1)
 zs = np.linspace(0.0, L, 25 + 1)
-
-rho_as = rhos[:-1]
-rho_bs = rhos[1:]
-phi_as = phis[:-1]
-phi_bs = phis[1:]
-z_as = zs[:-1]
-z_bs = zs[1:]
-
-for z_a, z_b in zip(z_as, z_bs):
-    for phi_a, phi_b in zip(phi_as, phi_bs):
-        for rho_a, rho_b in zip(rho_as, rho_bs):
-            mesh.add_convex(
-                gf.GeoTrans("GT_QK(3,1)"),
-                [
-                    [
-                        rho_a * np.cos(phi_a),
-                        rho_a * np.cos(phi_b),
-                        rho_b * np.cos(phi_a),
-                        rho_b * np.cos(phi_b),
-                        rho_a * np.cos(phi_a),
-                        rho_a * np.cos(phi_b),
-                        rho_b * np.cos(phi_a),
-                        rho_b * np.cos(phi_b),
-                    ],
-                    [
-                        rho_a * np.sin(phi_a),
-                        rho_a * np.sin(phi_b),
-                        rho_b * np.sin(phi_a),
-                        rho_b * np.sin(phi_b),
-                        rho_a * np.sin(phi_a),
-                        rho_a * np.sin(phi_b),
-                        rho_b * np.sin(phi_a),
-                        rho_b * np.sin(phi_b),
-                    ],
-                    [z_a, z_a, z_a, z_a, z_b, z_b, z_b, z_b],
-                ],
-            )
+mesh = gf.Mesh("cartesian", rhos, phis, zs)
 
 # %% [markdown]
 # ## 境界の選択
