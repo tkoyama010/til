@@ -74,7 +74,7 @@ pv.set_jupyter_backend("panel")
 # %% [code]
 rhos = np.linspace(0.0001, d / 2, 8 + 1)
 phis = np.linspace(0.0, 2.0 * np.pi, 16 + 1)
-zs = np.linspace(0.0, L, 25 + 1)
+zs = np.linspace(L, 0.0, 25 + 1)
 mesh = gf.Mesh("cartesian", rhos, phis, zs)
 
 # %% [markdown]
@@ -104,10 +104,6 @@ mesh.set_region(BOTTOM_BOUND, fb2)
 
 # %% [code]
 mesh.export_to_vtk("mesh.vtk", "ascii")
-import pyvista as pv
-
-pv.set_plot_theme("document")
-pv.set_jupyter_backend("panel")
 
 m = pv.read("mesh.vtk")
 plotter = pv.Plotter()
