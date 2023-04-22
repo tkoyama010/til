@@ -55,8 +55,8 @@ import getfem as gf
 import numpy as np
 import pyvista as pv
 
-pyvista.start_xvfb()
-pyvista.set_jupyter_backend("panel")
+pv.start_xvfb()
+pv.set_jupyter_backend("panel")
 
 ###############################################################################
 # Numerical parameters
