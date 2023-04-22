@@ -68,14 +68,19 @@ pv.set_jupyter_backend("panel")
 #
 # GetFEMには円筒形のメッシュを作成する機能はありません．
 # その代わり立方体の規則的なメッシュを素早く作成する機能があるためそれを利用します．
-# NumPyの配列からX方向長さが $2\pi$ ，Y方向長さが円筒形の半径 $r$ のメッシュを作成します．
+# NumPyの配列からX方向長さが円筒形の半径 $r$ ，Y方向長さが $2\pi$ のメッシュを作成します．
 #
 
 # %% [code]
 rhos = np.linspace(0.0001, d / 2, 8 + 1)
 phis = np.linspace(0.0, 2.0 * np.pi, 16 + 1)
 zs = np.linspace(L, 0.0, 25 + 1)
-mesh = gf.Mesh("cartesian", rhos, phis, zs)
+mesh = gf.Mesh("cartesian Q1", rhos, phis, zs)
+pts = mesh.pts()
+r = pts[0]
+t = pts[1]
+z = pts[2]
+mesh.set_pts(np.array([r * np.cos(t), r * np.sin(t), z]))
 
 # %% [markdown]
 # ## 境界の選択
