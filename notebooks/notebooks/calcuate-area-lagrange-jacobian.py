@@ -10,6 +10,9 @@
 #       jupytext_version: 1.14.5
 # ---
 
+# %% [markdown]
+# # Lagrangian補間とGauss積分による面積計算
+
 # %% [code]
 import sympy as sym
 from myst_nb import glue
