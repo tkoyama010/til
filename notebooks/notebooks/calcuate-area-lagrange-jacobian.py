@@ -50,3 +50,4 @@ glue("|J|", detJ)
 # %% [code]
 sym.expand(detJ).coeff(xi, 1)
 sym.expand(detJ).coeff(eta, 1)
+sym.expand(detJ).coeff(eta, 0)
