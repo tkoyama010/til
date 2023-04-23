@@ -17,3 +17,15 @@
 # ```math
 # y=N_1y_1+N_2y_2+N_3y_3+N_4y_4
 # ```
+# ```math
+# N_1=\frac{1}{4}\left(1-\xi \right)\left(1-\eta \right)
+# ```
+# ```math
+# N_2=\frac{1}{4}\left(1+\xi \right)\left(1-\eta \right)
+# ```
+# ```math
+# N_3=\frac{1}{4}\left(1+\xi \right)\left(1+\eta \right)
+# ```
+# ```math
+# N_4=\frac{1}{4}\left(1-\xi \right)\left(1+\eta \right)
+# ```
