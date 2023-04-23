@@ -44,8 +44,8 @@ J = sym.Matrix(
 glue("J", J)
 
 # %% [code]
-sym.expand(detJ)
-
-# %% [code]
 detJ = sym.diff(x, xi) * sym.diff(y, eta) - sym.diff(y, xi) * sym.diff(x, eta)
 glue("|J|", detJ)
+
+# %% [code]
+sym.expand(detJ)
