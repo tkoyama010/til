@@ -45,4 +45,3 @@ glue("J", J)
 
 # %% [code]
 glue("|J|", sym.diff(x, xi) * sym.diff(y, eta) - sym.diff(y, xi) * sym.diff(x, eta))
-
