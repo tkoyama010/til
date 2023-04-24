@@ -222,6 +222,5 @@ mim = gf.MeshIm(
 # 計算される1つのフィールドに対応する1つの変数を持つ実際のモデルを宣言してみましょう ．
 
 # %% [code]
-md=gf.Model('real');
-md.add_fem_variable('u', mfu)
-
+md = gf.Model("real")
+md.add_fem_variable("u", mfu)
