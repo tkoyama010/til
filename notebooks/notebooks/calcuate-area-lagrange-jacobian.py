@@ -19,11 +19,11 @@ from myst_nb import glue
 
 xi, eta = sym.symbols("xi eta")
 
-N1 = 1.0 / 4.0 * (1.0 - xi) * (1.0 + eta)
+N1 = 1.0 / 4.0 * (1.0 - xi) * (1.0 - eta)
 glue("N1", N1)
-N2 = 1.0 / 4.0 * (1.0 - xi) * (1.0 + eta)
+N2 = 1.0 / 4.0 * (1.0 + xi) * (1.0 - eta)
 glue("N2", N2)
-N3 = 1.0 / 4.0 * (1.0 - xi) * (1.0 + eta)
+N3 = 1.0 / 4.0 * (1.0 + xi) * (1.0 + eta)
 glue("N3", N3)
 N4 = 1.0 / 4.0 * (1.0 - xi) * (1.0 + eta)
 glue("N4", N4)
