@@ -72,4 +72,4 @@ sym.expand(detJ).coeff(xi, 1)
 sym.expand(detJ).coeff(eta, 1)
 
 # %% [code]
-sym.expand(detJ).coeff(eta, 0)
+sym.expand(detJ).coeff(xi, 0).coeff(eta, 0)
