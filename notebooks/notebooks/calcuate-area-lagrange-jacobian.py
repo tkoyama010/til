@@ -51,6 +51,18 @@ detJ = sym.diff(x, xi) * sym.diff(y, eta) - sym.diff(y, xi) * sym.diff(x, eta)
 glue("|J|", detJ)
 
 # %% [code]
+glue("sym.diff(x, xi)", sym.diff(x, xi))
+
+# %% [code]
+glue("sym.diff(y, eta)", sym.diff(y, eta))
+
+# %% [code]
+glue("sym.diff(y, xi)", sym.diff(y, xi))
+
+# %% [code]
+glue("sym.diff(x, eta)", sym.diff(x, eta))
+
+# %% [code]
 sym.expand(detJ)
 
 # %% [code]
