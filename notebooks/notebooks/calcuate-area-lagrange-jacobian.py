@@ -29,6 +29,16 @@ N4 = 1.0 / 4.0 * (1.0 - xi) * (1.0 + eta)
 glue("N4", N4)
 
 # %% [code]
+glud("sym.diff(N1, xi)", sym.diff(N1, xi))
+glud("sym.diff(N2, xi)", sym.diff(N2, xi))
+glud("sym.diff(N3, xi)", sym.diff(N3, xi))
+glud("sym.diff(N4, xi)", sym.diff(N4, xi))
+glud("sym.diff(N1, eta)", sym.diff(N1, eta))
+glud("sym.diff(N2, eta)", sym.diff(N2, eta))
+glud("sym.diff(N3, eta)", sym.diff(N3, eta))
+glud("sym.diff(N4, eta)", sym.diff(N4, eta))
+
+# %% [code]
 x1, x2, x3, x4 = sym.symbols("x_{1} x_{2} x_{3} x_{4}")
 y1, y2, y3, y4 = sym.symbols("y_{1} y_{2} y_{3} y_{4}")
 
