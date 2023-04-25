@@ -11,7 +11,7 @@
 # ---
 
 # %% [markdown]
-# # Lagrangian補間とGauss積分による面積計算
+# # Lagrangian補間とGauss求積による面積計算
 
 # %% [code]
 import sympy as sym
