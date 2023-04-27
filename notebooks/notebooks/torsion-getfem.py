@@ -46,6 +46,8 @@ with warnings.catch_warnings():
 
 # %% [code]
 elements_degree = 1
+E = 200.0e+06 # N/m^2
+nu = 0.3
 d = 0.100  # m
 L = 0.500  # m
 
@@ -180,7 +182,7 @@ plotter.show(cpos="yz")
 # これはベクトルフィールドでPythonでは次のように定義されます．
 
 # %% [code]
-mfu = gf.MeshFem(mesh, 2)
+mfu = gf.MeshFem(mesh, 3)
 mfu.set_classical_fem(elements_degree)
 
 # %% [markdown]
@@ -224,3 +226,6 @@ mim = gf.MeshIm(
 # %% [code]
 md = gf.Model("real")
 md.add_fem_variable("u", mfu)
+md.add_initialized_data("data_E", E)
+md.add_initialized_data("data_nu", nu)
+md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_nu")
