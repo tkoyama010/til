@@ -46,7 +46,7 @@ with warnings.catch_warnings():
 
 # %% [code]
 elements_degree = 1
-E = 200.0e+06 # N/m^2
+E = 200.0e06  # N/m^2
 nu = 0.3
 d = 0.100  # m
 L = 0.500  # m
