@@ -264,3 +264,16 @@ md.add_linear_term(mim, "[-X(2), X(1), 0.0].Test_u", TOP_BOUND)
 # %% [code]
 
 md.solve()
+
+# %% [markdown]
+# ## 解のエクスポート/可視化
+# 以上で有限要素問題が解けました．
+# 図のように解をプロットすることができます．
+
+U = md.variable("u")
+mfu.export_to_vtk("displacement.vtk", "ascii", mfu, U, "u")
+
+d = pv.read("displacement.vtk")
+plotter = pv.Plotter()
+plotter.add_mesh(d.warp_by_vector("u", factor=1.0e+08), show_edges=True)
+plotter.show(cpos="yz")
