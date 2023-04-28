@@ -275,5 +275,5 @@ mfu.export_to_vtk("displacement.vtk", "ascii", mfu, U, "u")
 
 d = pv.read("displacement.vtk")
 plotter = pv.Plotter()
-plotter.add_mesh(d.warp_by_vector("u", factor=1.0e+08), show_edges=True)
+plotter.add_mesh(d.warp_by_vector("u", factor=1.0e08), show_edges=True)
 plotter.show(cpos="yz")
