@@ -228,4 +228,28 @@ md = gf.Model("real")
 md.add_fem_variable("u", mfu)
 md.add_initialized_data("data_E", E)
 md.add_initialized_data("data_nu", nu)
+
+# %% [markdown]
+# ### 弾性変形問題
+# ここでは，弾性変形問題から始めましょう．
+# 以下の `add_isotropic_linearized_elasticity_brick` によって追加されている定義済みのブリックを使用します．
+# 対応する項は以下の通りです．
+# ```math
+# \int_{\Omega} (\lambda^* \mbox{div}(u) I + 2\mu \bar{\varepsilon}(u)):\bar{\varepsilon}(\delta_u)dx,
+# ```
+# この追加を接線線形システムに対して行います．
+# このモデルブリックを使用するために， Lamé 係数に対応するデータは，最初にモデルに追加する必要があります．
+# ここでは， Lamé 係数は，領域に対して一定です．
+# 以下のプログラムは，全体の弾性変形方程式を考慮に入れることができます．
+
+# %% [code]
 md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_nu")
+
+# %% [markdown]
+# 下側の境界に Dirichlet 条件を規定するために，既定のブリックを使用します．
+# Dirichlet条件を定義するいくつかのオプションがあります( [Dirichlet条件ブリック要素](https://getfem.readthedocs.io/ja/latest/userdoc/model_dirichlet.html#ud-model-dirichlet) を参照)．
+
+# %% [code]
+md.add_initialized_data("r2", [0.0, 0.0])
+md.add_initialized_data("H2", [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])
+md.add_generalized_Dirichlet_condition_with_multipliers(mim, "u", mfu, BOTTOM_BOUND, "r2", "H2")
