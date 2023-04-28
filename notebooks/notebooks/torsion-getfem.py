@@ -252,4 +252,6 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 # %% [code]
 md.add_initialized_data("r2", [0.0, 0.0])
 md.add_initialized_data("H2", [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])
-md.add_generalized_Dirichlet_condition_with_multipliers(mim, "u", mfu, BOTTOM_BOUND, "r2", "H2")
+md.add_generalized_Dirichlet_condition_with_multipliers(
+    mim, "u", mfu, BOTTOM_BOUND, "r2", "H2"
+)
