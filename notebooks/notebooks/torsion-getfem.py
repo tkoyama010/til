@@ -167,11 +167,13 @@ mesh.export_to_vtk("mesh.vtk", "ascii")
 m = pv.read("mesh.vtk")
 plotter = pv.Plotter()
 plotter.add_mesh(m, show_edges=True)
+plotter.enable_parallel_projection()
 plotter.show(cpos="yz")
 
 # %% [markdown]
 # ```{tip}
 # 上に示したジオメトリはインタラクティブです．
+# また、[平行投影](https://pyvista.github.io/pyvista-docs-dev-ja/api/plotting/_autosummary/pyvista.Renderer.enable_parallel_projection.html)を有効にします．
 # ```
 
 # %% [markdown]
@@ -278,4 +280,11 @@ mfu.export_to_vtk("displacement.vtk", "ascii", mfu, U, "u")
 d = pv.read("displacement.vtk")
 plotter = pv.Plotter()
 plotter.add_mesh(d.warp_by_vector("u", factor=1.0e08), show_edges=True)
+plotter.enable_parallel_projection()
 plotter.show(cpos="yz")
+
+# %% [markdown]
+# ```{tip}
+# 上に示したジオメトリはインタラクティブです．
+# また、[平行投影](https://pyvista.github.io/pyvista-docs-dev-ja/api/plotting/_autosummary/pyvista.Renderer.enable_parallel_projection.html)を有効にします．
+# ```
