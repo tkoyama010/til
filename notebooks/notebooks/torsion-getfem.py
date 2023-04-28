@@ -264,4 +264,3 @@ md.add_linear_term(mim, "[-X(2), X(1), 0.0].Test_u", TOP_BOUND)
 # %% [code]
 
 md.solve()
-
