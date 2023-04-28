@@ -63,8 +63,8 @@ import numpy as np
 import pyvista as pv
 
 pv.start_xvfb()
-# pv.set_jupyter_backend("panel")
-pv.set_plot_theme("paraview")
+pv.set_jupyter_backend("panel")
+pv.set_plot_theme("document")
 
 # %% [markdown]
 # ## メッシュ生成
