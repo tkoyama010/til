@@ -45,11 +45,11 @@ with warnings.catch_warnings():
 # ここで，問題のさまざまな物理パラメータおよび数値パラメータを定義しましょう．
 
 # %% [code]
-elements_degree = 1
-E = 200.0e06  # N/m^2
-nu = 0.3
-d = 0.100  # m
-L = 0.500  # m
+elements_degree = 1 # 次数
+E = 200.0e06  # ヤング率(N/m^2)
+nu = 0.3   # ポアソン比
+d = 0.100  # 直径(m)
+L = 0.500  # 高さ(m)
 
 # %% [markdown]
 # ## 初期化
@@ -64,6 +64,7 @@ import pyvista as pv
 
 pv.start_xvfb()
 pv.set_jupyter_backend("panel")
+pv.set_plot_theme("paraview")
 
 # %% [markdown]
 # ## メッシュ生成
@@ -164,9 +165,15 @@ mesh.set_region(BOTTOM_BOUND, fb2)
 # %% [code]
 mesh.export_to_vtk("mesh.vtk", "ascii")
 
+a = [d/2.0, 0.0, 0.0]
+b = [d/2.0, 0.0, L]
+line = pv.Line(a, b)
+
 m = pv.read("mesh.vtk")
 plotter = pv.Plotter()
 plotter.add_mesh(m, show_edges=True)
+plotter.add_mesh(line, color="white", line_width=10)
+plotter.add_point_labels([a, b], ["A", "B"], font_size=48, point_color="red", text_color="red")
 plotter.enable_parallel_projection()
 plotter.show(cpos="yz")
 
