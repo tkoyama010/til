@@ -255,4 +255,13 @@ md.add_initialized_data("H2", [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]
 md.add_generalized_Dirichlet_condition_with_multipliers(
     mim, "u", mfu, BOTTOM_BOUND, "r2", "H2"
 )
-md.add_linear_term(mim, "[-X(2), X(1), 0.0].*Test_u", BOTTOM_BOUND)
+md.add_linear_term(mim, "[-X(2), X(1), 0.0].Test_u", TOP_BOUND)
+
+# %% [markdown]
+# ## モデルの求解
+# モデルを正しく定義したら，次のようにして簡単に解くことができます．
+
+# %% [code]
+
+md.solve()
+
