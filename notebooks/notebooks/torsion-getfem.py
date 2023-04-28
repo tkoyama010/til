@@ -182,6 +182,7 @@ plotter.show(cpos="yz")
 # 上に示したジオメトリはインタラクティブです．
 # また、[平行投影](https://pyvista.github.io/pyvista-docs-dev-ja/api/plotting/_autosummary/pyvista.Renderer.enable_parallel_projection.html)を有効にします．
 # ドキュメントでは，平行投影は有効ではありません．
+# A-Bは結果のデータ抽出に使用する線です．
 # ```
 
 # %% [markdown]
