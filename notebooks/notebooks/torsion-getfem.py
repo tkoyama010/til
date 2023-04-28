@@ -234,9 +234,9 @@ md.add_initialized_data("data_nu", nu)
 # ここでは，弾性変形問題から始めましょう．
 # 以下の `add_isotropic_linearized_elasticity_brick` によって追加されている定義済みのブリックを使用します．
 # 対応する項は以下の通りです．
-# ```math
+# $$
 # \int_{\Omega} (\lambda^* \mbox{div}(u) I + 2\mu \bar{\varepsilon}(u)):\bar{\varepsilon}(\delta_u)dx,
-# ```
+# $$
 # この追加を接線線形システムに対して行います．
 # このモデルブリックを使用するために， Lamé 係数に対応するデータは，最初にモデルに追加する必要があります．
 # ここでは， Lamé 係数は，領域に対して一定です．
