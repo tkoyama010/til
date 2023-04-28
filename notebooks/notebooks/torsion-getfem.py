@@ -270,6 +270,8 @@ md.solve()
 # 以上で有限要素問題が解けました．
 # 図のように解をプロットすることができます．
 
+# %% [code]
+
 U = md.variable("u")
 mfu.export_to_vtk("displacement.vtk", "ascii", mfu, U, "u")
 
