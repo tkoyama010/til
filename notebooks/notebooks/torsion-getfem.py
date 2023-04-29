@@ -339,6 +339,7 @@ p.line(
     source=source,
     legend_label="x direction",
     line_color="blue",
+    line_width=3,
 )
 p.line(
     x="distance",
@@ -346,6 +347,7 @@ p.line(
     source=source,
     legend_label="y direction",
     line_color="green",
+    line_width=3,
 )
 p.line(
     x="distance",
@@ -353,6 +355,7 @@ p.line(
     source=source,
     legend_label="z direction",
     line_color="red",
+    line_width=3,
 )
 
 # add marker for theory
