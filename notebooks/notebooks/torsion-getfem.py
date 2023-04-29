@@ -322,9 +322,6 @@ ax.plot(
     np.array([-u]),
     marker="o",
 )
+ax.set_xlabel("Axial distance (mm)")
+ax.set_ylabel("Displacement (mm)")
 plt.show()
-# print("G:", G)
-# print("d:", d)
-# print("Ip:", Ip)
-# print("phi:", phi)
-# print("u:", u)
