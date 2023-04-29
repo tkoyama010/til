@@ -304,4 +304,3 @@ ax.plot(line["Distance"], line["u"][:, 0])
 ax.plot(line["Distance"], line["u"][:, 1])
 ax.plot(line["Distance"], line["u"][:, 2])
 plt.show()
-
