@@ -2,7 +2,6 @@ name: notebooks
 channels:
   - conda-forge
 dependencies:
-  - bokeh==3.1.0
   - getfem==5.4.2
   - ipyvtklink==0.2.3
   - jupyter-book==0.15.1
