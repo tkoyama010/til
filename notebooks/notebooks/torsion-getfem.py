@@ -30,11 +30,11 @@ with warnings.catch_warnings():
 
 # %% [code]
 elements_degree = 1  # 次数
-E = 200.0e03 # ヤング率(N/mm^2)
+E = 200.0e03  # ヤング率(N/mm^2)
 nu = 0.3  # ポアソン比
 d = 100.0  # 直径(mm)
 L = 500.0  # 高さ(mm)
-T = 1.0e06 # トルク(N mm)
+T = 1.0e06  # トルク(N mm)
 
 # %% [markdown]
 # ## 初期化
@@ -259,7 +259,7 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 # :include: torsion-getfem.tikz
 # ```
 # $$
-# T=\frac{1}{2}\left(\frac{d}{2}\right)^2\alpha 
+# T=\frac{1}{2}\left(\frac{d}{2}\right)^2\alpha
 # $$
 # $$
 # \alpha =8\frac{T}{d^2}
@@ -314,10 +314,14 @@ ax.plot(distance, u[:, 0])
 ax.plot(distance, u[:, 1])
 ax.plot(distance, u[:, 2])
 G = E / (2.0 * (1.0 + nu))
-Ip = np.pi * d **4 / 32.0
+Ip = np.pi * d**4 / 32.0
 phi = T * L / (G * Ip)
-u = (d/2) * phi
-ax.plot(np.array([L]), np.array([-u]), marker="o", )
+u = (d / 2) * phi
+ax.plot(
+    np.array([L]),
+    np.array([-u]),
+    marker="o",
+)
 plt.show()
 # print("G:", G)
 # print("d:", d)
