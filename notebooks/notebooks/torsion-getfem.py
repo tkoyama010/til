@@ -309,6 +309,10 @@ plotter.show(cpos="yz")
 # ```
 
 # %% [code]
+G = E / (2.0 * (1.0 + nu))
+Ip = np.pi * d**4 / 32.0
+phi = T * L / (G * Ip)
+theory = (d / 2) * phi
 
 line = displacement.sample_over_line(a, b)
 distance = line["Distance"]
@@ -317,13 +321,9 @@ fig, ax = plt.subplots()
 ax.plot(distance, u[:, 0], label="x direction")
 ax.plot(distance, u[:, 1], label="y direction")
 ax.plot(distance, u[:, 2], label="z direction")
-G = E / (2.0 * (1.0 + nu))
-Ip = np.pi * d**4 / 32.0
-phi = T * L / (G * Ip)
-u = (d / 2) * phi
 ax.plot(
     np.array([L]),
-    np.array([-u]),
+    np.array([-theory]),
     marker="o",
     label="theory",
 )
