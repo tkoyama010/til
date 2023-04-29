@@ -295,3 +295,13 @@ plotter.show(cpos="yz")
 # また、[平行投影](https://pyvista.github.io/pyvista-docs-dev-ja/api/plotting/_autosummary/pyvista.Renderer.enable_parallel_projection.html)を有効にします．
 # ドキュメントでは，平行投影は有効ではありません．
 # ```
+
+# %% [code]
+
+line = d.sample_over_line(a, b)
+fig, ax = plt.subplots()
+ax.plot(line["Distance"], line["u"][:, 0])
+ax.plot(line["Distance"], line["u"][:, 1])
+ax.plot(line["Distance"], line["u"][:, 2])
+plt.show()
+
