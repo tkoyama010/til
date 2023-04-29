@@ -273,7 +273,9 @@ md.add_generalized_Dirichlet_condition_with_multipliers(
 tau = 16.0 * T / np.pi / d**3
 radius = d / 2.0
 
-md.add_linear_term(mim, str(tau / radius) + "*" + "[-X(2), X(1), 0.0].Test_u", TOP_BOUND)
+md.add_linear_term(
+    mim, str(tau / radius) + "*" + "[-X(2), X(1), 0.0].Test_u", TOP_BOUND
+)
 
 # %% [markdown]
 # ## モデルの求解
