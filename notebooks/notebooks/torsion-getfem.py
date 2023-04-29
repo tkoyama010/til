@@ -262,12 +262,6 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 # ```{tikz}
 # :include: torsion-getfem.tikz
 # ```
-# $$
-# T=\frac{1}{2}\left(\frac{d}{2}\right)^2\alpha
-# $$
-# $$
-# \alpha =8\frac{T}{d^2}
-# $$
 
 # %% [code]
 md.add_initialized_data("r2", [0.0, 0.0, 0.0])
