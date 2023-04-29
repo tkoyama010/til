@@ -47,6 +47,10 @@ import getfem as gf
 import numpy as np
 import pyvista as pv
 
+from bokeh.plotting import figure, show
+from bokeh.models import ColumnDataSource, Label
+from bokeh.layouts import column
+
 pv.start_xvfb()
 pv.set_jupyter_backend("panel")
 
@@ -317,17 +321,34 @@ theory = (d / 2) * phi
 line = displacement.sample_over_line(a, b)
 distance = line["Distance"]
 u = line["u"]
-fig, ax = plt.subplots()
-ax.plot(distance, u[:, 0], label="x direction")
-ax.plot(distance, u[:, 1], label="y direction")
-ax.plot(distance, u[:, 2], label="z direction")
-ax.plot(
-    np.array([L]),
-    np.array([-theory]),
-    marker="o",
-    label="theory",
-)
-ax.set_xlabel("Axial distance (mm)")
-ax.set_ylabel("Displacement (mm)")
-plt.legend()
-plt.show()
+
+# %% [code]
+
+# create a figure
+p = figure(title="Displacement vs Axial distance",
+           x_axis_label="Axial distance (mm)",
+           y_axis_label="Displacement (mm)")
+
+# create ColumnDataSource
+source = ColumnDataSource(dict(distance=distance,
+                               x_direction=u[:, 0],
+                               y_direction=u[:, 1],
+                               z_direction=u[:, 2]))
+
+# plot the lines
+p.line(x='distance', y='x_direction', source=source, legend_label='x direction', line_color='blue')
+p.line(x='distance', y='y_direction', source=source, legend_label='y direction', line_color='green')
+p.line(x='distance', y='z_direction', source=source, legend_label='z direction', line_color='red')
+
+# add marker for theory
+p.circle(x=[L], y=[-theory], size=10, color='black', legend_label='theory')
+
+# add labels for marker
+theory_label = Label(x=L, y=-theory, text='theory', text_color='black', x_offset=5, y_offset=-10)
+p.add_layout(theory_label)
+
+# display legend
+p.legend.location = "top_left"
+
+# show the plot
+show(column(p))
