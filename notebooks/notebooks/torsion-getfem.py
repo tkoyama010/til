@@ -40,7 +40,8 @@ T = 1.0e06  # トルク(N mm)
 # ## 初期化
 #
 # Python の場合，これは簡単です．
-# GetFEM をグローバルにインポートするだけです(numpy と pyvista もインポートする必要があります)．
+# [GetFEM](https://getfem.readthedocs.io/ja/latest/index.html) をグローバルにインポートするだけです
+# (NumPy と [PyVista](https://pyvista.github.io/pyvista-docs-dev-ja/index.html) もインポートする必要があります)．
 
 # %% [code]
 import getfem as gf
