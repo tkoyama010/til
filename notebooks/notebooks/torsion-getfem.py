@@ -301,7 +301,7 @@ mfu.export_to_vtk("displacement.vtk", "ascii", mfu, U, "u")
 
 displacement = pv.read("displacement.vtk")
 plotter = pv.Plotter()
-plotter.add_mesh(displacement.warp_by_vector("u", factor=1.0), show_edges=True)
+plotter.add_mesh(displacement.warp_by_vector("u", factor=1000.0), show_edges=True)
 plotter.enable_parallel_projection()
 plotter.show(cpos="yz")
 
