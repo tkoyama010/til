@@ -314,9 +314,9 @@ line = displacement.sample_over_line(a, b)
 distance = line["Distance"]
 u = line["u"]
 fig, ax = plt.subplots()
-ax.plot(distance, u[:, 0])
-ax.plot(distance, u[:, 1])
-ax.plot(distance, u[:, 2])
+ax.plot(distance, u[:, 0], label="x direction")
+ax.plot(distance, u[:, 1], label="y direction")
+ax.plot(distance, u[:, 2], label="z direction")
 G = E / (2.0 * (1.0 + nu))
 Ip = np.pi * d**4 / 32.0
 phi = T * L / (G * Ip)
@@ -325,7 +325,9 @@ ax.plot(
     np.array([L]),
     np.array([-u]),
     marker="o",
+    label="theory",
 )
 ax.set_xlabel("Axial distance (mm)")
 ax.set_ylabel("Displacement (mm)")
+plt.legend()
 plt.show()
