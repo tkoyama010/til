@@ -122,25 +122,6 @@ for z_a, z_b in zip(z_as, z_bs):
 # ```
 
 # %% [markdown]
-# ## 境界の選択
-#
-# 境界のそれぞれの部分には異なる境界条件を設定するため，境界のさまざまな部分には番号を付けます．
-# したがって，メッシュ上の要素面を選択し，メッシュ領域を定義する必要があります．
-# 1, 2はそれぞれ上境界，下境界です．
-# これらの境界番号は，モデルのブリックで使用されます．
-
-# %% [code]
-
-fb1 = mesh.outer_faces_with_direction([0.0, 0.0, 1.0], 0.01)
-fb2 = mesh.outer_faces_with_direction([0.0, 0.0, -1.0], 0.01)
-
-TOP_BOUND = 1
-BOTTOM_BOUND = 2
-
-mesh.set_region(TOP_BOUND, fb1)
-mesh.set_region(BOTTOM_BOUND, fb2)
-
-# %% [markdown]
 # ## メッシュの描画
 #
 # メッシュをプレビューし，その妥当性を制御するために，次の手順を使用します．
@@ -172,6 +153,25 @@ plotter.show(cpos="yz")
 # ```
 
 # %% [markdown]
+# ## 境界の選択
+#
+# 境界のそれぞれの部分には異なる境界条件を設定するため，境界のさまざまな部分には番号を付けます．
+# したがって，メッシュ上の要素面を選択し，メッシュ領域を定義する必要があります．
+# 1, 2はそれぞれ上境界，下境界です．
+# これらの境界番号は，モデルのブリックで使用されます．
+
+# %% [code]
+
+fb1 = mesh.outer_faces_with_direction([0.0, 0.0, 1.0], 0.01)
+fb2 = mesh.outer_faces_with_direction([0.0, 0.0, -1.0], 0.01)
+
+TOP_BOUND = 1
+BOTTOM_BOUND = 2
+
+mesh.set_region(TOP_BOUND, fb1)
+mesh.set_region(BOTTOM_BOUND, fb2)
+
+# %% [markdown]
 # ## 有限要素法と積分法の定義
 #
 # メッシュをプレビューし，その妥当性を制御するために，次の手順を使用します．
@@ -183,7 +183,7 @@ mfu = gf.MeshFem(mesh, 3)
 mfu.set_classical_fem(elements_degree)
 
 # %% [markdown]
-# ここで， `2` はベクトル場の次元を表します．2行目は，使用する有限要素を設定します．
+# ここで， `3` はベクトル場の次元を表します．2行目は，使用する有限要素を設定します．
 # `classical_finite_element` は，連続したLagrange要素を意味し， `elements_degree` は `2` に設定されています．
 # これは2次の (アイソパラメトリック) 要素を使用することを意味します．
 # GetFEM では，既存の有限要素法を幅広く選択肢できます．
