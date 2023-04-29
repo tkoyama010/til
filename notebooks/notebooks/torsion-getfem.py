@@ -22,23 +22,7 @@ with warnings.catch_warnings():
 # %% [markdown]
 # # GetFEMによる丸棒のねじり解析
 #
-#
-# 半径方向の単位ベクトル $P$ は以下の式であらわされます．
-#
-# $$
-# P＝\begin{pmatrix}\cos \theta &\sin \theta \end{pmatrix}
-# $$
-#
-# ベクトル $P$ を角度 $\theta$ で微分すると接線方向の単位ベクトルを得ることができます．
-#
-# $$
-# \frac{dP}{d\theta }=\begin{pmatrix}-\sin \theta &\cos \theta \end{pmatrix}
-# $$
-
-# %% [markdown]
-# ```{tikz}
-# :include: torsion-getfem.tikz
-# ```
+# 本記事は [Salome-Meca2019による丸棒のねじり解析](https://qiita.com/femlabo-toyo/items/b28ef117ef003ad652f0) をGetFEMで再現したものです．
 
 # %% [markdown]
 # ## モデルのパラメータ
@@ -46,10 +30,11 @@ with warnings.catch_warnings():
 
 # %% [code]
 elements_degree = 1  # 次数
-E = 200.0e06  # ヤング率(N/m^2)
+E = 200.0e03 # ヤング率(N/mm^2)
 nu = 0.3  # ポアソン比
-d = 0.100  # 直径(m)
-L = 0.500  # 高さ(m)
+d = 100.0  # 直径(mm)
+L = 500.0  # 高さ(mm)
+T = 1.0e06 # トルク(N mm)
 
 # %% [markdown]
 # ## 初期化
@@ -256,6 +241,29 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 # %% [markdown]
 # 下側の境界に Dirichlet 条件を規定するために，既定のブリックを使用します．
 # Dirichlet条件を定義するいくつかのオプションがあります( [Dirichlet条件ブリック要素](https://getfem.readthedocs.io/ja/latest/userdoc/model_dirichlet.html#ud-model-dirichlet) を参照)．
+#
+# 半径方向の単位ベクトル $P$ は以下の式であらわされます．
+#
+# $$
+# P＝\begin{pmatrix}\cos \theta &\sin \theta \end{pmatrix}
+# $$
+#
+# ベクトル $P$ を角度 $\theta$ で微分すると接線方向の単位ベクトルを得ることができます．
+#
+# $$
+# \frac{dP}{d\theta }=\begin{pmatrix}-\sin \theta &\cos \theta \end{pmatrix}
+# $$
+
+# %% [markdown]
+# ```{tikz}
+# :include: torsion-getfem.tikz
+# ```
+# $$
+# T=\frac{1}{2}\left(\frac{d}{2}\right)^2\alpha 
+# $$
+# $$
+# \alpha =8\frac{T}{d^2}
+# $$
 
 # %% [code]
 md.add_initialized_data("r2", [0.0, 0.0, 0.0])
@@ -283,9 +291,9 @@ md.solve()
 U = md.variable("u")
 mfu.export_to_vtk("displacement.vtk", "ascii", mfu, U, "u")
 
-d = pv.read("displacement.vtk")
+displacement = pv.read("displacement.vtk")
 plotter = pv.Plotter()
-plotter.add_mesh(d.warp_by_vector("u", factor=1.0e08), show_edges=True)
+plotter.add_mesh(displacement.warp_by_vector("u", factor=1.0), show_edges=True)
 plotter.enable_parallel_projection()
 plotter.show(cpos="yz")
 
@@ -298,9 +306,21 @@ plotter.show(cpos="yz")
 
 # %% [code]
 
-line = d.sample_over_line(a, b)
+line = displacement.sample_over_line(a, b)
+distance = line["Distance"]
+u = line["u"]
 fig, ax = plt.subplots()
-ax.plot(line["Distance"], line["u"][:, 0])
-ax.plot(line["Distance"], line["u"][:, 1])
-ax.plot(line["Distance"], line["u"][:, 2])
+ax.plot(distance, u[:, 0])
+ax.plot(distance, u[:, 1])
+ax.plot(distance, u[:, 2])
+G = E / (2.0 * (1.0 + nu))
+Ip = np.pi * d **4 / 32.0
+phi = T * L / (G * Ip)
+u = (d/2) * phi
+ax.plot(np.array([L]), np.array([-u]), marker="o", )
 plt.show()
+# print("G:", G)
+# print("d:", d)
+# print("Ip:", Ip)
+# print("phi:", phi)
+# print("u:", u)
