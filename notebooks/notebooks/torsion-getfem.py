@@ -36,6 +36,9 @@ d = 100.0  # 直径(mm)
 L = 500.0  # 高さ(mm)
 T = 1.0e06  # トルク(N mm)
 
+clambda = E*nu/((1+nu)*(1-2*nu))
+cmu = E/(2*(1+nu))
+
 # %% [markdown]
 # ## 初期化
 #
@@ -231,6 +234,8 @@ md.add_fem_variable("u", mfu)
 md.add_fem_variable("v", mfu)
 md.add_initialized_data("data_E", E)
 md.add_initialized_data("data_nu", nu)
+md.add_initialized_data("clambda", clambda)
+md.add_initialized_data("cmu", cmu)
 
 # %% [markdown]
 # ### 微小ひずみ弾性変形問題
@@ -243,6 +248,14 @@ md.add_initialized_data("data_nu", nu)
 
 # %% [code]
 md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_nu")
+
+# %% [markdown]
+# ### 有限歪弾性変形問題
+# 同様に，以下のプログラムは，有限歪弾性変形問題を記述しています．
+# St.Venant-Kirchhoffの使用方法に注意してください．
+
+# %% [code]
+md.add_finite_strain_elasticity_brick(mim, 'SaintVenant Kirchhoff', "v", "clambda", "cmu")
 
 # %% [markdown]
 # 下側の境界に Dirichlet 条件を規定するために，既定のブリックを使用します．
@@ -271,12 +284,18 @@ md.add_initialized_data("H2", [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]
 md.add_generalized_Dirichlet_condition_with_multipliers(
     mim, "u", mfu, BOTTOM_BOUND, "r2", "H2"
 )
+md.add_generalized_Dirichlet_condition_with_multipliers(
+    mim, "v", mfu, BOTTOM_BOUND, "r2", "H2"
+)
 
 tau = 16.0 * T / np.pi / d**3
 radius = d / 2.0
 
 md.add_linear_term(
     mim, str(tau / radius) + "*" + "[-X(2), X(1), 0.0].Test_u", TOP_BOUND
+)
+md.add_linear_term(
+    mim, str(tau / radius) + "*" + "[-X(2), X(1), 0.0].Test_v", TOP_BOUND
 )
 
 # %% [markdown]
@@ -295,11 +314,15 @@ md.solve()
 # %% [code]
 
 U = md.variable("u")
-mfu.export_to_vtk("displacement.vtk", "ascii", mfu, U, "u")
+V = md.variable("v")
+mfu.export_to_vtk("displacement.vtk", "ascii", mfu, U, "u", V, "v")
 
 displacement = pv.read("displacement.vtk")
-plotter = pv.Plotter()
+plotter = pv.Plotter(shape=(1, 2))
 plotter.add_mesh(displacement.warp_by_vector("u", factor=1000.0), show_edges=True)
+plotter.enable_parallel_projection()
+plotter.subplot(0, 1)
+plotter.add_mesh(displacement.warp_by_vector("v", factor=1000.0), show_edges=True)
 plotter.enable_parallel_projection()
 plotter.show(cpos="yz")
 
