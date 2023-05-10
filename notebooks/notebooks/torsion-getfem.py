@@ -36,8 +36,8 @@ d = 100.0  # 直径(mm)
 L = 500.0  # 高さ(mm)
 T = 1.0e06  # トルク(N mm)
 
-clambda = E*nu/((1+nu)*(1-2*nu))
-cmu = E/(2*(1+nu))
+clambda = E * nu / ((1 + nu) * (1 - 2 * nu))
+cmu = E / (2 * (1 + nu))
 
 # %% [markdown]
 # ## 初期化
@@ -255,7 +255,9 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 # St.Venant-Kirchhoffの使用方法に注意してください．
 
 # %% [code]
-md.add_finite_strain_elasticity_brick(mim, 'SaintVenant Kirchhoff', "v", "clambda", "cmu")
+md.add_finite_strain_elasticity_brick(
+    mim, "SaintVenant Kirchhoff", "v", "clambda", "cmu"
+)
 
 # %% [markdown]
 # 下側の境界に Dirichlet 条件を規定するために，既定のブリックを使用します．
