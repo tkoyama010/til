@@ -234,7 +234,7 @@ md.add_fem_variable("u", mfu)
 md.add_fem_variable("v", mfu)
 md.add_initialized_data("data_E", E)
 md.add_initialized_data("data_nu", nu)
-md.add_initialized_data('params', [clambda, cmu]);
+md.add_initialized_data("params", [clambda, cmu])
 
 # %% [markdown]
 # ### 微小ひずみ弾性変形問題
