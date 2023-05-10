@@ -246,8 +246,7 @@ md.add_initialized_data("params", [clambda, cmu])
 # 以下のプログラムは，全体の弾性変形方程式を考慮に入れることができます．
 
 # %% [code]
-md.add_finite_strain_elasticity_brick(mim, "SaintVenant Kirchhoff", "u", "params")
-# md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_nu")
+md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_nu")
 
 # %% [markdown]
 # ### 有限歪弾性変形問題
