@@ -223,17 +223,18 @@ mim = gf.MeshIm(
 # [modelオブジェクト](https://getfem.readthedocs.io/ja/latest/userdoc/model_object.html#ud-model-object)
 # を参照してください)．
 #
-# 計算される1つのフィールドに対応する1つの変数を持つ実際のモデルを宣言してみましょう ．
+# 計算される2つのフィールドに対応する2つの変数を持つ実際のモデルを宣言してみましょう ．
 
 # %% [code]
 md = gf.Model("real")
 md.add_fem_variable("u", mfu)
+md.add_fem_variable("v", mfu)
 md.add_initialized_data("data_E", E)
 md.add_initialized_data("data_nu", nu)
 
 # %% [markdown]
-# ### 弾性変形問題
-# ここでは，弾性変形問題から始めましょう．
+# ### 微小ひずみ弾性変形問題
+# ここでは，微小ひずみ弾性変形問題から始めましょう．
 # 以下の `add_isotropic_linearized_elasticity_brick` によって追加されている[定義済みのブリック](https://getfem.readthedocs.io/ja/latest/userdoc/model_linear_elasticity.html)を使用します．
 # この追加を接線線形システムに対して行います．
 # このモデルブリックを使用するために， Lamé 係数に対応するデータは，最初にモデルに追加する必要があります．
