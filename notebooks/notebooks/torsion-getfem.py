@@ -57,6 +57,7 @@ from bokeh.layouts import column
 
 pv.start_xvfb()
 pv.set_jupyter_backend("static")
+pv.set_plot_theme('document')
 
 # %% [markdown]
 # ## メッシュ生成
