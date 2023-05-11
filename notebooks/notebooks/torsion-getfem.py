@@ -190,7 +190,7 @@ mesh.set_region(BOTTOM_BOUND, fb2)
 mfu = gf.MeshFem(mesh, 3)
 mfp = gf.MeshFem(mesh, 1)
 mfu.set_classical_fem(elements_degree)
-mfp.set_fem(gf.Fem('FEM_QK_DISCONTINUOUS(3,0)'))
+mfp.set_fem(gf.Fem("FEM_QK_DISCONTINUOUS(3,0)"))
 
 # %% [markdown]
 # ここで， `3` はベクトル場の次元を表します．2行目は，使用する有限要素を設定します．
@@ -257,7 +257,9 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 # St.Venant-Kirchhoffの使用方法に注意してください．
 
 # %% [code]
-md.add_finite_strain_elasticity_brick(mim, "Incompressible Mooney Rivlin", "v", "params")
+md.add_finite_strain_elasticity_brick(
+    mim, "Incompressible Mooney Rivlin", "v", "params"
+)
 md.add_finite_strain_incompressibility_brick(mim, "v", "p")
 # md.add_finite_strain_elasticity_brick(mim, "SaintVenant Kirchhoff", "v", "params")
 
