@@ -188,7 +188,9 @@ mesh.set_region(BOTTOM_BOUND, fb2)
 
 # %% [code]
 mfu = gf.MeshFem(mesh, 3)
+mfp = gf.MeshFem(mesh, 1)
 mfu.set_classical_fem(elements_degree)
+mfp.set_fem(gf.Fem('FEM_QK_DISCONTINUOUS(3,0)'))
 
 # %% [markdown]
 # ここで， `3` はベクトル場の次元を表します．2行目は，使用する有限要素を設定します．
@@ -232,6 +234,7 @@ mim = gf.MeshIm(
 md = gf.Model("real")
 md.add_fem_variable("u", mfu)
 md.add_fem_variable("v", mfu)
+md.add_fem_variable("p", mfp)
 md.add_initialized_data("data_E", E)
 md.add_initialized_data("data_nu", nu)
 md.add_initialized_data("params", [clambda, cmu])
@@ -254,7 +257,9 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 # St.Venant-Kirchhoffの使用方法に注意してください．
 
 # %% [code]
-md.add_finite_strain_elasticity_brick(mim, "SaintVenant Kirchhoff", "v", "params")
+md.add_finite_strain_elasticity_brick(mim, "Incompressible Mooney Rivlin", "v", "params")
+md.add_finite_strain_incompressibility_brick(mim, "v", "p")
+# md.add_finite_strain_elasticity_brick(mim, "SaintVenant Kirchhoff", "v", "params")
 
 # %% [markdown]
 # 下側の境界に Dirichlet 条件を規定するために，既定のブリックを使用します．
@@ -293,7 +298,7 @@ radius = d / 2.0
 md.add_linear_term(
     mim, str(tau / radius) + "*" + "[-X(2), X(1), 0.0].Test_u", TOP_BOUND
 )
-md.add_nonlinear_term(
+md.add_linear_term(
     mim, str(tau / radius) + "*" + "[-X(2), X(1), 0.0].Test_v", TOP_BOUND
 )
 
@@ -321,9 +326,13 @@ plotter = pv.Plotter(shape=(1, 2))
 plotter.add_mesh(displacement.warp_by_vector("u", factor=2000.0), show_edges=True)
 plotter.enable_parallel_projection()
 plotter.subplot(0, 1)
-plotter.add_mesh(displacement.warp_by_vector("v", factor=2000.0), show_edges=True)
+plotter.add_mesh(displacement.warp_by_vector("v", factor=20000.0), show_edges=True)
 plotter.enable_parallel_projection()
 plotter.show(cpos="yz")
+
+# %% [code]
+
+del plotter
 
 # %% [markdown]
 # ```{tip}
@@ -341,6 +350,80 @@ theory = (d / 2) * phi
 line = displacement.sample_over_line(a, b)
 distance = line["Distance"]
 u = line["u"]
+
+# %% [code]
+
+# create a figure
+p = figure(
+    title="Displacement vs Axial distance",
+    x_axis_label="Axial distance (mm)",
+    y_axis_label="Displacement (mm)",
+)
+
+# create ColumnDataSource
+source = ColumnDataSource(
+    dict(
+        distance=distance, x_direction=u[:, 0], y_direction=u[:, 1], z_direction=u[:, 2]
+    )
+)
+
+# plot the lines
+p.line(
+    x="distance",
+    y="x_direction",
+    source=source,
+    legend_label="x direction",
+    line_color="blue",
+    line_width=3,
+)
+p.line(
+    x="distance",
+    y="y_direction",
+    source=source,
+    legend_label="y direction",
+    line_color="green",
+    line_width=3,
+)
+p.line(
+    x="distance",
+    y="z_direction",
+    source=source,
+    legend_label="z direction",
+    line_color="red",
+    line_width=3,
+)
+
+# add marker for theory
+p.circle(x=[L], y=[-theory], size=10, color="black", legend_label="theory")
+
+# add labels for marker
+theory_label = Label(
+    x=L, y=-theory, text="theory", text_color="black", x_offset=5, y_offset=-10
+)
+p.add_layout(theory_label)
+
+# display legend
+p.legend.location = "top_left"
+
+# show the plot
+show(column(p))
+
+# %% [markdown]
+# ```{tip}
+# 上に示したジオメトリはインタラクティブです．
+# また、[平行投影](https://pyvista.github.io/pyvista-docs-dev-ja/api/plotting/_autosummary/pyvista.Renderer.enable_parallel_projection.html)を有効にします．
+# ドキュメントでは，平行投影は有効ではありません．
+# ```
+
+# %% [code]
+G = E / (2.0 * (1.0 + nu))
+Ip = np.pi * d**4 / 32.0
+phi = T * L / (G * Ip)
+theory = (d / 2) * phi
+
+line = displacement.sample_over_line(a, b)
+distance = line["Distance"]
+u = line["v"]
 
 # %% [code]
 
