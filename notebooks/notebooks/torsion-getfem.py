@@ -258,9 +258,12 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 
 # %% [code]
 md.add_finite_strain_elasticity_brick(
-    mim, "Incompressible Mooney Rivlin", "v", "params"
+    mim, "Ciarlet Geymonat", "v", "params"
 )
-md.add_finite_strain_incompressibility_brick(mim, "v", "p")
+# md.add_finite_strain_elasticity_brick(
+#     mim, "Incompressible Mooney Rivlin", "v", "params"
+# )
+# md.add_finite_strain_incompressibility_brick(mim, "v", "p")
 # md.add_finite_strain_elasticity_brick(mim, "SaintVenant Kirchhoff", "v", "params")
 
 # %% [markdown]
