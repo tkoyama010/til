@@ -237,7 +237,8 @@ md.add_fem_variable("v", mfu)
 md.add_fem_variable("p", mfp)
 md.add_initialized_data("data_E", E)
 md.add_initialized_data("data_nu", nu)
-md.add_initialized_data("params", [clambda, cmu])
+a = np.average([np.max([0.0, cmu / 2.0 - clambda / 4.0]), cmu / 2.0])
+md.add_initialized_data("params", [clambda, cmu, a])
 
 # %% [markdown]
 # ### 微小ひずみ弾性変形問題
