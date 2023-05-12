@@ -257,9 +257,7 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 # St.Venant-Kirchhoffの使用方法に注意してください．
 
 # %% [code]
-md.add_finite_strain_elasticity_brick(
-    mim, "Ciarlet Geymonat", "v", "params"
-)
+md.add_finite_strain_elasticity_brick(mim, "Ciarlet Geymonat", "v", "params")
 # md.add_finite_strain_elasticity_brick(
 #     mim, "Incompressible Mooney Rivlin", "v", "params"
 # )
