@@ -188,9 +188,7 @@ mesh.set_region(BOTTOM_BOUND, fb2)
 
 # %% [code]
 mfu = gf.MeshFem(mesh, 3)
-mfp = gf.MeshFem(mesh, 1)
 mfu.set_classical_fem(elements_degree)
-mfp.set_fem(gf.Fem("FEM_QK_DISCONTINUOUS(3,0)"))
 
 # %% [markdown]
 # ここで， `3` はベクトル場の次元を表します．2行目は，使用する有限要素を設定します．
@@ -234,11 +232,9 @@ mim = gf.MeshIm(
 md = gf.Model("real")
 md.add_fem_variable("u", mfu)
 md.add_fem_variable("v", mfu)
-md.add_fem_variable("p", mfp)
 md.add_initialized_data("data_E", E)
 md.add_initialized_data("data_nu", nu)
-a = np.average([np.max([0.0, cmu / 2.0 - clambda / 4.0]), cmu / 2.0])
-md.add_initialized_data("params", [clambda, cmu, a])
+md.add_initialized_data("params", [clambda, cmu])
 
 # %% [markdown]
 # ### 微小ひずみ弾性変形問題
@@ -258,12 +254,7 @@ md.add_isotropic_linearized_elasticity_pstress_brick(mim, "u", "data_E", "data_n
 # St.Venant-Kirchhoffの使用方法に注意してください．
 
 # %% [code]
-md.add_finite_strain_elasticity_brick(mim, "Ciarlet Geymonat", "v", "params")
-# md.add_finite_strain_elasticity_brick(
-#     mim, "Incompressible Mooney Rivlin", "v", "params"
-# )
-# md.add_finite_strain_incompressibility_brick(mim, "v", "p")
-# md.add_finite_strain_elasticity_brick(mim, "SaintVenant Kirchhoff", "v", "params")
+md.add_finite_strain_elasticity_brick(mim, "SaintVenant Kirchhoff", "v", "params")
 
 # %% [markdown]
 # 下側の境界に Dirichlet 条件を規定するために，既定のブリックを使用します．
