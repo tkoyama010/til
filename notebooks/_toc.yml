@@ -11,3 +11,4 @@ chapters:
 - file: notebooks/hello-tikz
 - file: notebooks/integration-getfem
 - file: notebooks/torsion-getfem
+- file: notebooks/tlvmc-parkinsons-freezing-gait-prediction
