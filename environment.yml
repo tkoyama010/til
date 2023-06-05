@@ -18,8 +18,9 @@ dependencies:
   - pyvista==0.36.1
   - scikit-learn==1.2.2
   - seaborn==0.12.2
-  - sphinx-book-theme==1.0.0
   - sphinx==4.5.0
+  - sphinx-book-theme==1.0.0
   - statsmodels==0.13.5
+  - sympy==1.11.1
   - pip:
     - sphinxcontrib-tikz==0.4.16
