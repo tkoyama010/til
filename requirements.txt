@@ -1,4 +1,4 @@
 getfem==5.4.2
 myst-nb==0.17.2
-pyvista==0.38.5
+pyvista==0.39.1
 sympy==1.11.1

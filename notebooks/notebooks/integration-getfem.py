@@ -17,6 +17,14 @@ with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import matplotlib.pyplot as plt
 
+# %% [code]
+# https://github.com/matplotlib/matplotlib/issues/5836#issuecomment-179592427
+import warnings
+
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    import matplotlib.pyplot as plt
+
 # %% [markdown]
 # # 求積法のリスト
 #
