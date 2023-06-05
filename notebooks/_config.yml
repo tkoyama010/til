@@ -34,5 +34,6 @@ html:
 sphinx:
   config:
     suppress_warnings: ["mystnb.unknown_mime_type"]
+    tikz_tikzlibraries: "arrows.meta,bending"
   extra_extensions:
     - sphinxcontrib.tikz

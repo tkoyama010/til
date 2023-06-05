@@ -10,4 +10,5 @@ chapters:
 - file: notebooks/hello-pyvista
 - file: notebooks/hello-tikz
 - file: notebooks/integration-getfem
+- file: notebooks/torsion-getfem
 - file: notebooks/1d_heat_transfer_with_radiation
