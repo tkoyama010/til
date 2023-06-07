@@ -35,7 +35,7 @@ with warnings.catch_warnings():
 # ## 検証解析
 #
 # 前節の定式化を元に平面波の斜め面内波入射解析を行い，一般化 RT 法による解析結果との比較を行った。
-# 
+#
 
 # %% [code]
 print("Hello world!")
