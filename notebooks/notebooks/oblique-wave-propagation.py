@@ -11,14 +11,6 @@
 #       jupytext_version: 1.14.5
 # ---
 
-# %% [code]
-# https://github.com/matplotlib/matplotlib/issues/5836#issuecomment-179592427
-import warnings
-
-with warnings.catch_warnings():
-    warnings.simplefilter("ignore")
-    import matplotlib.pyplot as plt
-
 # %% [markdown]
 # # 水平成層地盤を対象とした平面波斜め入射時の時刻歴応答解析の定式化と検証
 
