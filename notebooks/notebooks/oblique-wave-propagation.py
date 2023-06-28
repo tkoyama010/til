@@ -44,6 +44,23 @@
 # $𝐹_𝑥$ , $𝐹_𝑧$ はモデル底面位置 $𝑁$ のみに応力 $𝐹_𝑥$ ,  $𝐹_𝑧$ が作用し，それ以外は $0$ となる。
 
 # %% [markdown]
+# ## モデル底面位置の境界条件
+#
+# SV 波の斜め入射時の応力 $𝐹_𝑥$ , $𝐹_𝑧$ は，インピーダンスマトリックスとドライビングフォースに分けて以下のように示される({cite:ts}`Kausel1981StiffnessMF`, {cite:ts}`永野 正行1995KJ00004100178`)。
+# $$
+# \begin{Bmatrix}F_{xN}\\F_{zN}\end{Bmatrix}=\left[\frac{\rho _N}{\cos \left(\theta _P-\theta _S\right)}\begin{bmatrix}V_{SN}\cos \theta _P&-V_{PN}\sin \theta _S\\V_{PN}\sin \theta _S&V_{PN}\cos \theta _S\end{bmatrix}+2\rho _NV_{SN}\sin \theta _S\begin{bmatrix}0&1\\-1&0\end{bmatrix}\right]\frac{d}{dt}\begin{Bmatrix}U_{xN}\\U_{zN}\end{Bmatrix}-\frac{\rho _N}{\cos \left(\theta _P-\theta _S\right)}\begin{bmatrix}V_{SN}\cos \theta _P&0\\0&V_{PN}\cos \theta _S\end{bmatrix}\frac{d}{dt}\begin{Bmatrix}U_{gxN}\\U_{gzN}\end{Bmatrix}
+# $$
+# ここで，$𝑉_{S𝑁}$, $𝑉_{P𝑁}$, $\rho_{N}$ は入射層の S 波速度，P 波速度，密度である。
+# $$
+# \theta _P=\sin ^{-1}\left(\dfrac{V_{SN}}{V_{PN}}\sin \theta _S\right)
+# $$
+# は SV 波入射層における反射 P 波の角度である。
+# また，
+# $$
+# \frac{d}{dt}\begin{Bmatrix}U_{gxN}\\U_{gzN}\end{Bmatrix}=\frac{d}{dt}U_{gSV}\begin{Bmatrix}\cos \theta _S\\\sin \theta _S\end{Bmatrix}
+# $$
+# であり， $𝑈_{gSV}$ は SV 波の入射振幅である。
+# %% [markdown]
 # ## 検証解析
 #
 # 前節の定式化を元に平面波の斜め面内波入射解析を行い，一般化 RT 法による解析結果との比較を行った。
