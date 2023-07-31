@@ -48,10 +48,10 @@ train.head(3)
 # `test.csv` ファイルにテスト用のデータが保存されていますので同様に `pandas.read_csv` で読み込みます。
 
 # %%
-import pandas as pd
+# import pandas as pd
 
-test = pd.read_csv("test.csv")
-test.head(3)
+# test = pd.read_csv("test.csv")
+# test.head(3)
 
 # %% [markdown]
 # また、 `seaborn` というライブラリを使用してもデータを取得することができます。
