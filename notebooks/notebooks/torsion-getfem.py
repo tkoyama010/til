@@ -48,10 +48,6 @@ import getfem as gf
 import numpy as np
 import pyvista as pv
 
-from bokeh.plotting import figure, show
-from bokeh.models import ColumnDataSource, Label
-from bokeh.layouts import column
-
 pv.start_xvfb()
 pv.set_jupyter_backend("panel")
 
