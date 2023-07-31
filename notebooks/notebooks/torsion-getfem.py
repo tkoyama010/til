@@ -320,58 +320,17 @@ distance = line["Distance"]
 u = line["u"]
 
 # %% [code]
-
-# create a figure
-p = figure(
-    title="Displacement vs Axial distance",
-    x_axis_label="Axial distance (mm)",
-    y_axis_label="Displacement (mm)",
+fig, ax = plt.subplots()
+ax.plot(distance, u[:, 0], label="x direction")
+ax.plot(distance, u[:, 1], label="y direction")
+ax.plot(distance, u[:, 2], label="z direction")
+ax.plot(
+    np.array([L]),
+    np.array([-theory]),
+    marker="o",
+    label="theory",
 )
-
-# create ColumnDataSource
-source = ColumnDataSource(
-    dict(
-        distance=distance, x_direction=u[:, 0], y_direction=u[:, 1], z_direction=u[:, 2]
-    )
-)
-
-# plot the lines
-p.line(
-    x="distance",
-    y="x_direction",
-    source=source,
-    legend_label="x direction",
-    line_color="blue",
-    line_width=3,
-)
-p.line(
-    x="distance",
-    y="y_direction",
-    source=source,
-    legend_label="y direction",
-    line_color="green",
-    line_width=3,
-)
-p.line(
-    x="distance",
-    y="z_direction",
-    source=source,
-    legend_label="z direction",
-    line_color="red",
-    line_width=3,
-)
-
-# add marker for theory
-p.circle(x=[L], y=[-theory], size=10, color="black", legend_label="theory")
-
-# add labels for marker
-theory_label = Label(
-    x=L, y=-theory, text="theory", text_color="black", x_offset=5, y_offset=-10
-)
-p.add_layout(theory_label)
-
-# display legend
-p.legend.location = "top_left"
-
-# show the plot
-show(column(p))
+ax.set_xlabel("Axial distance (mm)")
+ax.set_ylabel("Displacement (mm)")
+plt.legend()
+plt.show()
