@@ -26,32 +26,32 @@ with warnings.catch_warnings():
 # Titanicのデータを取得します。
 
 # %%
-## !kaggle competitions download -c titanic --quiet
+# !kaggle competitions download -c titanic --quiet
 
 # %% [markdown]
 # ダウンロードの際には`kaggle.json`ファイルを `~/.kaggle/kaggle.json` に配置しておく必要があります。
 # `titanic.zip`ファイルがダウンロードされますのでカレントディレクトリに展開します。
 
 # %%
-## !unzip titanic.zip
+# !unzip titanic.zip
 
 # %% [markdown]
 # `train.csv` ファイルに訓練用のデータが保存されていますので `pandas.read_csv` で読み込みます。
 
 # %%
-# import pandas as pd
+import pandas as pd
 
-# train = pd.read_csv("train.csv")
-# train.head(3)
+train = pd.read_csv("train.csv")
+train.head(3)
 
 # %% [markdown]
 # `test.csv` ファイルにテスト用のデータが保存されていますので同様に `pandas.read_csv` で読み込みます。
 
 # %%
-# import pandas as pd
+import pandas as pd
 
-# test = pd.read_csv("test.csv")
-# test.head(3)
+test = pd.read_csv("test.csv")
+test.head(3)
 
 # %% [markdown]
 # また、 `seaborn` というライブラリを使用してもデータを取得することができます。
