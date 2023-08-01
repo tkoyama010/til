@@ -21,5 +21,15 @@ dependencies:
   - sphinx-book-theme==1.0.0
   - sphinx==4.5.0
   - statsmodels==0.13.5
+  - ca-certificates==2023.5.7
+  - certifi==2023.5.7
+  - eigen==3.4.0
+  - fonttools==4.41.0
+  - metis==5.1.0
+  - nbconvert==7.7.1
+  - nbconvert-core==7.7.1
+  - nbconvert-pandoc==7.7.1
+  - python-fastjsonschema==2.17.1
+  - wheel==0.40.0
   - pip:
     - sphinxcontrib-tikz==0.4.16
