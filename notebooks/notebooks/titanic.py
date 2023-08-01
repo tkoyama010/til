@@ -61,8 +61,8 @@ with warnings.catch_warnings():
 import seaborn as sns
 
 # Load the example Titanic dataset
-# df = sns.load_dataset("titanic")
-df = train
+df = sns.load_dataset("titanic")
+# df = train
 
 # Make a custom palette with gendered colors
 pal = dict(male="#6495ED", female="#F08080")
