@@ -21,8 +21,8 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
+  url: https://github.com/tkoyama010/notebooks  # Online location of your book
+  path_to_book: notebooks  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
@@ -34,3 +34,6 @@ html:
 sphinx:
   config:
     suppress_warnings: ["mystnb.unknown_mime_type"]
+    tikz_tikzlibraries: "arrows.meta,bending"
+  extra_extensions:
+    - sphinxcontrib.tikz

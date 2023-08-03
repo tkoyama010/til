@@ -6,5 +6,8 @@ root: index
 chapters:
 - file: notebooks/hello-world
 - file: notebooks/titanic
-- file: notebooks/getfem-import
-- file: notebooks/pyvista-import
+- file: notebooks/hello-getfem
+- file: notebooks/hello-pyvista
+- file: notebooks/hello-tikz
+- file: notebooks/integration-getfem
+- file: notebooks/torsion-getfem
