@@ -39,4 +39,14 @@ A = np.array([[1.0, -1.0, 0.0], [-1.0, 2.0, -1.0], [0.0, -1.0, 2.0]])
 # %%
 eigenvalues, eigenvectors = np.linalg.eigh(A)
 omega_a = (1 / (2 * np.pi)) * np.sqrt(eigenvalues)
-vectors_a = eigenvectors
+phi_a = eigenvectors
+
+# %% [markdown]
+#
+# 剛性行列$A$同士のMACを計算してみます。
+
+# %%
+MAC = np.zeros((3, 3))
+for i in range(3):
+  for j in range(3):
+    MAC[i, j] = np.sum(phi_a.T @ phi_a) / ((np.sum(phi_a.T @ phi_a)) * (np.sum(phi_a.T @ phi_a)))
