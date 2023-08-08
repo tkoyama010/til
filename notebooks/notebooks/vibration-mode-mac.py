@@ -19,7 +19,7 @@
 # 得られたスカラーはMAC行列に配置します。
 #
 # $$
-# MAC\left(A,X\right)=\frac{\left|\sum _{j=1}^n\left\{\varphi _A\right\}_j\left\{\varphi _X\right\}_j\right|}{\left(\sum _{j=1}^n\left\{\varphi _A\right\}_j^2\right)\left(\sum _{j=1}^n\left\{\varphi _X\right\}_j^2\right)}.
+# MAC\left(A,X\right)=\frac{\left|\sum _{j=1}^n\left\{\varphi _A\right\}_j^T\left\{\varphi _X\right\}_j\right|^2}{\left(\sum _{j=1}^n\left\{\varphi _A\right\}_j^T\left\{\varphi _A\right\}_j^{ }\right)\left(\sum _{j=1}^n\left\{\varphi _X\right\}_j^T\left\{\varphi _X\right\}_j^{ }\right)}.
 # $$
 
 # %% [markdown]
