@@ -19,7 +19,7 @@
 # 得られたスカラーはMAC行列に配置します。
 #
 # $$
-# MAC\left(A,X\right)=\frac{\left|\sum _{j=1}^n\left\{\varphi _A\right\}_j^T\left\{\varphi _X\right\}_j\right|^2}{\left(\sum _{j=1}^n\left\{\varphi _A\right\}_j^T\left\{\varphi _A\right\}_j^{ }\right)\left(\sum _{j=1}^n\left\{\varphi _X\right\}_j^T\left\{\varphi _X\right\}_j^{ }\right)}.
+# MAC\left(A,X\right)=\frac{\left|\sum _{j=1}^n\left\{\varphi _A\right\}_j^{ }\left\{\varphi _X\right\}_j\right|^2}{\left(\sum _{j=1}^n\left\{\varphi _A\right\}_j^{ }\left\{\varphi _A\right\}_j^{ }\right)\left(\sum _{j=1}^n\left\{\varphi _X\right\}_j^{ }\left\{\varphi _X\right\}_j^{ }\right)}.
 # $$
 
 # %% [markdown]
@@ -46,10 +46,5 @@ phi_a = eigenvectors
 # 剛性行列$A$同士のMACを計算してみます。
 
 # %%
-MAC = np.zeros((3, 3))
-for i in range(3):
-    for j in range(3):
-        MAC[i, j] = np.sum(phi_a[:, i].T @ phi_a[:, j]) / (
-            (np.sum(phi_a[:, i].T @ phi_a[:, i]))
-            * (np.sum(phi_a[:, j].T @ phi_a[:, j]))
-        )
+MAC = (phi_a.T @ phi_a)**2 / ((phi_a.T @ phi_a) * (phi_a.T @ phi_a))
+print(MAC)
