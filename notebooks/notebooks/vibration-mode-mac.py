@@ -34,7 +34,9 @@ A = np.array([[1.0, -1.0, 0.0], [-1.0, 2.0, -1.0], [0.0, -1.0, 2.0]])
 
 # %% [markdown]
 #
-# 剛性行列の固有値と固有ベクトルは以下のとおりです。
+# 剛性行列の固有振動数と固有ベクトルは以下のとおりです。
 
 # %%
-_, varphiA = np.linalg.eigh(A)
+eigenvalues, eigenvectors = np.linalg.eigh(A)
+omega_a = (1 / (2 * np.pi)) * np.sqrt(eigenvalues)
+vectors_a = eigenvectors
