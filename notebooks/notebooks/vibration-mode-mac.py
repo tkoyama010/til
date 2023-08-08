@@ -46,5 +46,5 @@ phi_a = eigenvectors
 # 剛性行列$A$同士のMACを計算してみます。
 
 # %%
-MAC = (phi_a.T @ phi_a)**2 / ((phi_a.T @ phi_a) * (phi_a.T @ phi_a))
+MAC = (phi_a.T @ phi_a) ** 2 / ((phi_a.T @ phi_a) * (phi_a.T @ phi_a))
 print(MAC)
