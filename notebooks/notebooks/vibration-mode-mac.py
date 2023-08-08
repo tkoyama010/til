@@ -40,6 +40,8 @@ A = np.array([[1.0, -1.0, 0.0], [-1.0, 2.0, -1.0], [0.0, -1.0, 2.0]])
 eigenvalues, eigenvectors = np.linalg.eigh(A)
 omega_a = (1 / (2 * np.pi)) * np.sqrt(eigenvalues)
 phi_a = eigenvectors
+print(omega_a)
+print(phi_a)
 
 # %% [markdown]
 #
