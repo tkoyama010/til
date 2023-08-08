@@ -50,5 +50,6 @@ MAC = np.zeros((3, 3))
 for i in range(3):
     for j in range(3):
         MAC[i, j] = np.sum(phi_a[:, i].T @ phi_a[:, j]) / (
-            (np.sum(phi_a[:, i].T @ phi_a[:, i])) * (np.sum(phi_a[:, j].T @ phi_a[:, j]))
+            (np.sum(phi_a[:, i].T @ phi_a[:, i]))
+            * (np.sum(phi_a[:, j].T @ phi_a[:, j]))
         )
