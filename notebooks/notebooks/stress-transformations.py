@@ -19,6 +19,7 @@
 #
 # $$
 # \begin{bmatrix}+\cos \theta &-\sin \theta &0\\+\sin \theta &+\cos \theta &0\\0&0&1\end{bmatrix}^T\begin{bmatrix}\sigma _{xx}&\tau _{xy}&\tau _{zx}\\\tau _{xy}&\sigma _{yy}&\tau _{yz}\\\tau _{zx}&\tau _{yz}&\sigma _{zz}\end{bmatrix}\begin{bmatrix}+\cos \theta &-\sin \theta &0\\+\sin \theta &+\cos \theta &0\\0&0&1\end{bmatrix}
+# $$
 #
 # 行列積を計算すると以下の応力テンソルを得ることができる。
 #
