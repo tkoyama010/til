@@ -30,6 +30,7 @@
 # %% [markdown]
 #
 # Y軸まわりに要素座標系を $\theta$ だけ回転する場合、回転後の応力テンソルは以下の式で表されます。
+#
 # $$
 # \begin{bmatrix}+\sigma _{xx}\cos \theta \cos \theta -\tau _{zx}\sin \theta \cos \theta -\tau _{zx}\cos \theta \text{sin}\theta +\sigma _{zz}\sin \theta \sin \theta &+\tau _{xy}\cos \theta -\tau _{yz}\sin \theta &+\sigma _{xx}\cos \theta \sin \theta -\tau _{zx}\sin \theta \sin \theta +\tau _{zx}\cos \theta \cos \theta -\sigma _{zz}\sin \theta \cos \theta \\+\tau _{xy}\cos \theta -\tau _{yz}\sin \theta &\sigma _{yy}&+\tau _{xy}\sin \theta +\tau _{yz}\cos \theta \\+\sigma _{xx}\sin \theta \cos \theta +\tau _{zx}\cos \theta \cos \theta -\tau _{zx}\sin \theta \sin \theta -\sigma _{zz}\cos \theta \sin \theta &+\tau _{xy}\sin \theta +\tau _{yz}\cos \theta &+\tau _{zx}\sin \theta \cos \theta +\sigma _{zz}\cos \theta \cos \theta \end{bmatrix}
 # $$
