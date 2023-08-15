@@ -26,6 +26,8 @@
 # $$
 # \begin{bmatrix}+\sigma _{xx}\cos \theta \cos \theta +\tau _{xy}\sin \theta \cos \theta +\tau _{xy}\sin \theta \cos \theta +\sigma _{yy}\sin \theta \sin \theta &-\sigma _{xx}\sin \theta \cos \theta -\tau _{xy}\sin \theta \sin \theta +\tau _{xy}\cos \theta \cos \theta +\sigma _{yy}\sin \theta \cos \theta &+\tau _{zx}\cos \theta +\tau _{yz}\sin \theta \\-\sigma _{xx}\sin \theta \cos \theta +\tau _{xy}\cos \theta \cos \theta -\tau _{xy}\sin \theta \sin \theta +\sigma _{yy}\sin \theta \cos \theta &+\sigma _{xx}\sin \theta \sin \theta -\tau _{xy}\sin \theta \cos \theta -\tau _{xy}\sin \theta \cos \theta +\sigma _{yy}\cos \theta \cos \theta &-\tau _{zx}\sin \theta +\tau _{yz}\cos \theta \\+\tau _{zx}\cos \theta +\tau _{yz}\sin \theta &-\tau _{zx}\sin \theta +\tau _{yz}\cos \theta &\sigma _{zz}\end{bmatrix}
 # $$
+
+# %% [markdown]
 #
 # Y軸まわりに要素座標系を $\theta$ だけ回転する場合、回転後の応力テンソルは以下の式で表されます。
 # $$
