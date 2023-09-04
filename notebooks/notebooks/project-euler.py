@@ -16,7 +16,7 @@
 # Fibonacci数列は3項ごとに偶数の項となる。
 
 # %% [markdown]
-# 
+#
 # $$
 # \frac{1}{\sqrt{5}}\left\{\left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n\right\}<N
 # $$
