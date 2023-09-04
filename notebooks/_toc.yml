@@ -12,3 +12,4 @@ chapters:
 - file: notebooks/integration-getfem
 - file: notebooks/torsion-getfem
 - file: notebooks/stress-transformations
+- file: notebooks/project-euler
