@@ -18,7 +18,7 @@
 # %% [markdown]
 #
 # $$
-# \frac{1}{\sqrt{5}}\left\{\left(\frac{1+\sqrt{5}}{2}\right)^{3n+1}-\left(\frac{1-\sqrt{5}}{2}\right)^{3n+1}\right\}<N
+# \frac{1}{\sqrt{5}}\left\{\left(\frac{1+\sqrt{5}}{2}\right)^{3n}-\left(\frac{1-\sqrt{5}}{2}\right)^{3n}\right\}<N
 # $$
 
 # %%
