@@ -4,11 +4,11 @@
 format: jb-book
 root: index
 chapters:
-- file: notebooks/hello-world
-- file: notebooks/titanic
-- file: notebooks/hello-getfem
-- file: notebooks/hello-pyvista
-- file: notebooks/hello-tikz
-- file: notebooks/integration-getfem
-- file: notebooks/torsion-getfem
-- file: notebooks/stress-transformations
+  - file: notebooks/hello-world
+  - file: notebooks/titanic
+  - file: notebooks/hello-getfem
+  - file: notebooks/hello-pyvista
+  - file: notebooks/hello-tikz
+  - file: notebooks/integration-getfem
+  - file: notebooks/torsion-getfem
+  - file: notebooks/stress-transformations
