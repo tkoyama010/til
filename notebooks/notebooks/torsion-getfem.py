@@ -53,7 +53,6 @@ from bokeh.models import ColumnDataSource, Label
 from bokeh.layouts import column
 
 pv.start_xvfb()
-pv.set_jupyter_backend("panel")
 
 # %% [markdown]
 # ## メッシュ生成
