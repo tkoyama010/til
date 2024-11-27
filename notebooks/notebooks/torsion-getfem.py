@@ -302,6 +302,10 @@ plotter.add_mesh(displacement.warp_by_vector("u", factor=1000.0), show_edges=Tru
 plotter.enable_parallel_projection()
 plotter.show(cpos="yz")
 
+# %% [code]
+
+del plotter
+
 # %% [markdown]
 # ```{tip}
 # 上に示したジオメトリはインタラクティブです．
@@ -318,6 +322,80 @@ theory = (d / 2) * phi
 line = displacement.sample_over_line(a, b)
 distance = line["Distance"]
 u = line["u"]
+
+# %% [code]
+
+# create a figure
+p = figure(
+    title="Displacement vs Axial distance",
+    x_axis_label="Axial distance (mm)",
+    y_axis_label="Displacement (mm)",
+)
+
+# create ColumnDataSource
+source = ColumnDataSource(
+    dict(
+        distance=distance, x_direction=u[:, 0], y_direction=u[:, 1], z_direction=u[:, 2]
+    )
+)
+
+# plot the lines
+p.line(
+    x="distance",
+    y="x_direction",
+    source=source,
+    legend_label="x direction",
+    line_color="blue",
+    line_width=3,
+)
+p.line(
+    x="distance",
+    y="y_direction",
+    source=source,
+    legend_label="y direction",
+    line_color="green",
+    line_width=3,
+)
+p.line(
+    x="distance",
+    y="z_direction",
+    source=source,
+    legend_label="z direction",
+    line_color="red",
+    line_width=3,
+)
+
+# add marker for theory
+p.circle(x=[L], y=[-theory], size=10, color="black", legend_label="theory")
+
+# add labels for marker
+theory_label = Label(
+    x=L, y=-theory, text="theory", text_color="black", x_offset=5, y_offset=-10
+)
+p.add_layout(theory_label)
+
+# display legend
+p.legend.location = "top_left"
+
+# show the plot
+show(column(p))
+
+# %% [markdown]
+# ```{tip}
+# 上に示したジオメトリはインタラクティブです．
+# また、[平行投影](https://pyvista.github.io/pyvista-docs-dev-ja/api/plotting/_autosummary/pyvista.Renderer.enable_parallel_projection.html)を有効にします．
+# ドキュメントでは，平行投影は有効ではありません．
+# ```
+
+# %% [code]
+G = E / (2.0 * (1.0 + nu))
+Ip = np.pi * d**4 / 32.0
+phi = T * L / (G * Ip)
+theory = (d / 2) * phi
+
+line = displacement.sample_over_line(a, b)
+distance = line["Distance"]
+u = line["v"]
 
 # %% [code]
 
