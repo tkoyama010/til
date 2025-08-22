@@ -1,2 +1,2 @@
 getfem==5.4.2
-pyvista==0.44.1
+pyvista==0.46.2
